@@ -4,13 +4,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        urbanist: ["Urbanist", "sans-serif"],
-        garamond: ["EB Garamond", "serif"],
+        mono: ["JetBrains Mono", "monospace"],
+        garamond: ["JetBrains Mono", "monospace"],
       },
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: true,
+    themes: ["aqua"],
   },
 };

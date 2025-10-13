@@ -1,47 +1,18 @@
 import { ThemeProvider } from "react-hook-theme";
-import ThemeSwitcher from "./ThemeSwitcher";
+import { useEffect } from "react";
 
 function ThemeChooser() {
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", "aqua");
+  }, []);
+
   return (
     <ThemeProvider
-      defaultTheme="light"
-      themes={[
-        "light",
-        "dark",
-        "cupcake",
-        "bumblebee",
-        "emerald",
-        "corporate",
-        "synthwave",
-        "retro",
-        "cyberpunk",
-        "valentine",
-        "halloween",
-        "garden",
-        "forest",
-        "aqua",
-        "lofi",
-        "pastel",
-        "fantasy",
-        "wireframe",
-        "black",
-        "luxury",
-        "dracula",
-        "cmyk",
-        "autumn",
-        "business",
-        "acid",
-        "lemonade",
-        "night",
-        "coffee",
-        "winter",
-        "dim",
-        "nord",
-        "sunset",
-      ]}
+      defaultTheme="aqua"
+      themes={["aqua"]}
     >
       <div className="min-h-screen flex items-center justify-center">
-        <ThemeSwitcher />
+        {/* Theme is fixed to aqua, no switcher needed */}
       </div>
     </ThemeProvider>
   );

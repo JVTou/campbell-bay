@@ -16,17 +16,18 @@ const Hero = () => {
     >
       <motion.div
         variants={fadeIn("right", "tween", 0.2, 1)}
-        className="z-10 hero-content flex-col items-center lg:items-start"
+        className="z-10 hero-content w-full flex flex-col lg:flex-row items-center justify-between px-4 pt-32"
       >
-        <div className="text-center lg:text-start flex flex-col justify-center items-center lg:items-start min-w-2/3">
+        {/* Left side - Text content */}
+        <div className="text-center lg:text-start flex flex-col justify-center items-center lg:items-start lg:w-1/2">
           <div className="font-garamond text-3xl font-black md:text-7xl text-white md:text-base-content">
-            veritas managed solutions, inc.
-            <div className="h-[3rem] md:h-[6rem] md:w-[720px] py-1 md:py-3">
+            Campbell Bay Electric
+            <div className="h-[5rem] md:h-[10rem] md:w-[720px] py-1 md:py-3">
                <Typewriter
                  onInit={(typewriter) => {
                    typewriter
                      .pauseFor(1000)
-                     .typeString(`<span class="text-amber-400">Low Voltage Systems</span>`)
+                     .typeString(`<span class="text-amber-400">Electrical Services</span>`)
                      .start();
                  }}
                 options={{
@@ -37,7 +38,7 @@ const Hero = () => {
                 }}
               />
             </div>
-             <span className="text-white md:text-base-content font-garamond">since 2009</span>
+             <span className="text-white md:text-base-content font-garamond">since 2019</span>
           </div>
           <div className="py-6 flex gap-2 max-lg:justify-center">
             <a
@@ -54,6 +55,18 @@ const Hero = () => {
             </a>
           </div>
         </div>
+
+        {/* Right side - Logo image */}
+        <motion.div
+          variants={fadeIn("left", "tween", 0.4, 1)}
+          className="hidden lg:flex lg:w-1/2 justify-center items-center"
+        >
+          <img
+            src="/media/logo/IMG_07122013.jpeg"
+            alt="Campbell Bay Electric Logo"
+            className="max-w-full max-h-[500px] object-contain rounded-lg shadow-2xl"
+          />
+        </motion.div>
       </motion.div>
     </motion.div>
     </>

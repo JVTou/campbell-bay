@@ -1,13 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 
-/* Set default font family to Garamond */
+/* Set default font family to JetBrains Mono */
 body {
-  font-family: "EB Garamond", serif;
+  font-family: "JetBrains Mono", monospace;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

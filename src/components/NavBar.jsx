@@ -8,7 +8,7 @@ const navigation = [
   { name: "Testimonial", href: "#testimonial" },
   { name: "About", href: "#aboutus" },
   { name: "Contact Us", href: "#contactus" },
-  { name: "Projects Album", href: "#projects" },
+  { name: "Projects", href: "#projects" },
 ];
 const NavBar = () => {
   const [active, setActive] = useState("Home");
@@ -54,19 +54,22 @@ const NavBar = () => {
           >
             <div className="w-12">
               <div className="rounded object-contain">
-                <img src="/images/icons/veritas_logo.png" />
+                <img src="/media/logo/Tab-Icon.png" alt="Campbell Bay Electric Logo" />
               </div>
             </div>
-            veritas managed solutions, inc.
+            Campbell Bay Electric
           </a>
         </div>
         <div className="navbar-center">
           <div className="w-12 md:hidden">
             <div className="rounded object-contain">
-              <img src="/images/icons/veritas_logo.png" />
+              <img src="/media/logo/Tab-Icon.png" alt="Campbell Bay Electric Logo" />
             </div>
           </div>
-          <div className="ml-10 hidden lg:flex">
+        </div>
+
+        <div className="navbar-end flex items-center gap-4">
+          <div className="hidden lg:flex">
             {navigation.map((item, index) => (
               <nav key={index} className="menu menu-horizontal px-1">
                 <a
@@ -82,10 +85,6 @@ const NavBar = () => {
               </nav>
             ))}
           </div>
-        </div>
-
-        <div className="navbar-end h-10 scale-75">
-          <ThemeChooser />
         </div>
       </div>
     </div>

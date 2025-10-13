@@ -15,17 +15,17 @@ const Footer = () => {
   ];
 
   const serviceLinks = [
-    { name: "Physical Security", href: "#services" },
-    { name: "Cable Infrastructure", href: "#services" },
-    { name: "Wireless & Networking", href: "#services" },
-    { name: "Audio Visual", href: "#services" },
-    { name: "IT Services", href: "#services" },
+    { name: "Residential Services", href: "#services" },
+    { name: "Commercial Services", href: "#services" },
+    { name: "Integrated Electrification", href: "#services" },
+    { name: "Smart Electrical Panels", href: "#services" },
+    { name: "EV Charging Solutions", href: "#services" },
   ];
 
   const companyLinks = [
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/veritas-managed-solutions-inc", external: true },
-    { name: "Email Us", href: "mailto:contact@veritas-inc.com", external: true },
-    { name: "Call Us", href: "tel:+18779710849", external: true },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/campbell-bay-electric", external: true },
+    { name: "Email Us", href: "mailto:info@campbellbayelectric.com", external: true },
+    { name: "Call Us", href: "tel:+14089106195", external: true },
   ];
 
   return (
@@ -46,13 +46,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold font-garamond text-base-content">Veritas Managed Solutions</h3>
+              <h3 className="text-lg font-semibold font-garamond text-base-content">Campbell Bay Electric</h3>
               <div className="flex items-center space-x-2">
-                <img src="/images/icons/veritas_logo.png" alt="Veritas Logo" className="w-16" />
+                <img src="/media/logo/Tab-Icon.png" alt="Campbell Bay Electric Logo" className="w-16" />
               </div>
 
               <p className="text-sm text-base-content/70 font-garamond">
-                Precision in Every Connection, Excellence in Every Project
+                Safe, Efficient, and Durable Electrical Solutions
               </p>
             </div>
 
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-base-content/10">
           <div className="flex items-center justify-center py-6 font-garamond text-sm lg:text-lg">
-            <h1>© Veritas Managed Solutions, Inc. 2009-{yearNow}. All rights reserved.</h1>
+            <h1>© Campbell Bay Electric 2019-{yearNow}. All rights reserved.</h1>
           </div>
         </div>
       </motion.div>

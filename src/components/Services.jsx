@@ -4,46 +4,46 @@ import { fadeIn, staggerContainer } from "../utils/motion";
 
 const services = [
   {
-    name: "Cable Infrastructure",
+    name: "Residential Services",
     icon: "/images/featured/cableinfrastructure.jpeg",
     description:
-      "Build or renovate your network with our comprehensive cable infrastructure solutions. From structured cabling to fiber optic installations, we ensure reliable connectivity for your business.",
+      "Electrical panel upgrades, smart house features, whole house rewires, emergency power systems, generator installs, battery backup installs, recessed lighting, and low-voltage wiring.",
   },
   {
-    name: "Wireless Services",
+    name: "Commercial Services",
     icon: "/images/featured/wireless.jpeg",
     description:
-      "Wireless systems designed by experts. We provide enterprise-grade WiFi solutions, wireless network design, and optimization to keep your business connected seamlessly.",
+      "Transformers, phase converters, commercial tenant improvements, commercial services and troubleshooting, exterior lighting, high-voltage lighting, and parking lot lighting.",
   },
   {
-    name: "Audio and Visual",
+    name: "Integrated Electrification Systems",
     icon: "/images/featured/audiovisual.jpg",
     description:
-      "Modern conference room and AV solutions prepared to improve your workflow. From video conferencing systems to digital signage, we enhance communication and collaboration.",
+      "Smart electrical panels, solar integration, EV charging, energy storage systems, and micro-grids. Create energy-efficient spaces with modern technologies that maximize your property's energy potential.",
   },
   {
-    name: "Security Services",
+    name: "Smart Electrical Panels",
     icon: "/images/featured/security.jpg",
     description:
-      "Secure your locations with card access, burglar and alarm systems. Our comprehensive security solutions protect your assets and provide peace of mind.",
+      "Certified installer of Span Smart Panels. Intelligently manage solar power, home batteries, and EV charging. Enable fast Level 2 charging and future bi-directional EV chargers.",
   },
   {
-    name: "Information Technology",
+    name: "Energy Storage Systems",
     icon: "/images/featured/IT.jpg",
     description:
-      "Software, troubleshooting and desktop support. Our IT team handles everything from system administration to technical support to keep your technology running smoothly.",
+      "Battery backup systems integrated with smart panels. Reduce energy costs during peak hours, power your home during blackouts, and participate in Virtual Power Plant programs.",
   },
   {
-    name: "Managed Services",
+    name: "EV Charging Solutions",
     icon: "/images/featured/managedservices.jpg",
     description:
-      "Network systems, server management and smart hands. We proactively monitor and maintain your IT infrastructure to prevent issues before they impact your business.",
+      "Level 2 EV chargers for fast charging. Future bi-directional chargers will enable both charging your car and back-feeding energy to power your home during utility outages.",
   },
   {
-    name: "Consultation",
+    name: "Solar Integration",
     icon: "/images/featured/consultation.jpg",
     description:
-      "Consultation, design and project management. Our experts work with you to plan, design, and execute technology solutions that align with your business goals.",
+      "Partner with leading solar installers for seamless solar installations. We handle the electrical integration to ensure safe, reliable, and long-lasting solar power systems.",
   },
 ];
 const Services = () => {
@@ -64,7 +64,7 @@ const Services = () => {
           Our Services
         </h1>
         <span className="z-10 text-md font-garamond mt-2 px-2 text-center md:mt-4 md:px-5 md:text-xl">
-          Comprehensive technology solutions to power your business growth and success.
+          Professional electrical services and integrated electrification systems for residential and commercial properties throughout the South Bay Area.
         </span>
       </motion.div>
       <motion.div

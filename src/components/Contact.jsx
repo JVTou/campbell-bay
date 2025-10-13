@@ -30,9 +30,9 @@ const Contact = () => {
         <div className="lg:-mx-6 lg:flex lg:items-start">
           <div className="z-10 lg:mx-0 lg:mt-0 lg:flex lg:w-1/2 lg:flex-col lg:items-start">
             <div className="mt-6 space-y-8 md:mt-8">
-              {/* Headquarters */}
+              {/* Office Location */}
               <div>
-                <h3 className="text-base-400 font-semibold mb-3 font-garamond">Our Headquarters</h3>
+                <h3 className="text-base-400 font-semibold mb-3 font-garamond">Our Office</h3>
                 <p className="-mx-2 flex items-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,146 +54,8 @@ const Contact = () => {
                     />
                   </svg>
                   <span className="mx-2 font-garamond text-base-content">
-                    <strong className="font-garamond">Northern California:</strong> 398 Martin Avenue, Santa Clara, CA 95050
+                    <strong className="font-garamond">Address:</strong> 205 E Alma Ave, San Jose, CA 95112
                   </span>
-                </p>
-              </div>
-
-              {/* Branches */}
-              <div>
-                <h3 className="text-base-400 font-semibold mb-3 font-garamond">Branches</h3>
-                <div className="space-y-3">
-                  <p className="-mx-2 flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-base-400 mx-2 h-5 w-5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span className="mx-2 font-garamond text-base-content">
-                      <strong className="font-garamond">Southern California:</strong> 1251 Pomona Rd, Unit 104, Corona, CA 92882
-                    </span>
-                  </p>
-                  <p className="-mx-2 flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-base-400 mx-2 h-5 w-5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span className="mx-2 font-garamond text-base-content">
-                      <strong className="font-garamond">Texas:</strong> 720 Bastrop Hwy, Suite 109, Austin, TX 78741
-                    </span>
-                  </p>
-                  <p className="-mx-2 flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-base-400 mx-2 h-5 w-5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span className="mx-2 font-garamond text-base-content">
-                      <strong className="font-garamond">Nevada:</strong> 625 Spice Islands Dr, Suite C, Sparks, NV 89431
-                    </span>
-                  </p>
-                  <p className="-mx-2 flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-base-400 mx-2 h-5 w-5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span className="mx-2 font-garamond text-base-content">
-                      <strong className="font-garamond">Arizona:</strong> 9845 S 31st Ave, Laveen, AZ 85339
-                    </span>
-                  </p>
-                  <p className="-mx-2 flex items-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-base-400 mx-2 h-5 w-5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span className="mx-2 font-garamond text-base-content">
-                      <strong className="font-garamond">Idaho:</strong> 1449 N Wollaston Dr, Post Falls, ID 83854
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-              {/* National Team */}
-              <div>
-                <h3 className="text-base-400 font-semibold mb-3 font-garamond">National Team</h3>
-                <p className="font-garamond text-base-content mb-2">
-                  Our national team is available for projects in all states
-                </p>
-                <p className="font-garamond text-base-content opacity-80">
-                  <strong className="font-garamond">Contact:</strong> Our national project managers will support our services outside of our usual locations
                 </p>
               </div>
 
@@ -216,7 +78,7 @@ const Contact = () => {
                     />
                   </svg>
                   <span className="mx-2 font-garamond text-base-content">
-                    <strong className="font-garamond">Email:</strong> contact@veritas-inc.com
+                    <strong className="font-garamond">Email:</strong> info@campbellbayelectric.com
                   </span>
                 </p>
                 <p className="-mx-2 flex items-start mt-3">
@@ -235,7 +97,7 @@ const Contact = () => {
                     />
                   </svg>
                   <span className="mx-2 font-garamond text-base-content">
-                    <strong className="font-garamond">Phone:</strong> +1 877-971-0849
+                    <strong className="font-garamond">Phone:</strong> (408) 910-6195
                   </span>
                 </p>
               </div>
@@ -246,7 +108,7 @@ const Contact = () => {
                 <div className="-mx-1.5 mt-4 flex ">
                   <a
                     className="btn mx-1.5 rounded-full bg-base-100"
-                    href="https://www.linkedin.com/company/veritas-managed-solutions-inc"
+                    href="https://www.linkedin.com/company/campbell-bay-electric"
                     aria-label="linkedin"
                   >
                     <svg

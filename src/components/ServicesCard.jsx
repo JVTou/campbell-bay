@@ -122,7 +122,7 @@ const ServicesCard = () => {
           <img
             className="opacity-100 max-w-full rounded-lg z-10 transition-all duration-300 ease-out"
             src="/images/featured/linesofbusiness.png"
-            alt="Veritas Business Solutions"
+            alt="Campbell Bay Electric Services"
             loading="eager"
             fetchPriority="high"
             decoding="sync"

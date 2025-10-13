@@ -56,32 +56,32 @@ const businessPhotos = {
 
 const businessLines = [
   {
-    title: "Security Services",
-    subtitle: "Comprehensive security solutions including access control, surveillance systems, and alarm monitoring to protect your business assets.",
-    icon: "/images/featured/security.jpg",
+    title: "Residential Services",
+    subtitle: "Electrical panel upgrades, smart house features, whole house rewires, emergency power systems, generator installs, battery backup installs, recessed lighting, and low-voltage wiring.",
+    icon: "/images/featured/cableinfrastructure.jpeg",
     albumType: "security"
   },
   {
-    title: "Data Infrastructure", 
-    subtitle: "Robust data center solutions, network infrastructure, and data management systems to ensure reliable connectivity and data protection.",
-    icon: "/images/featured/cableinfrastructure.jpeg",
+    title: "Commercial Services", 
+    subtitle: "Transformers, phase converters, commercial tenant improvements, commercial services and troubleshooting, exterior lighting, high-voltage lighting, and parking lot lighting.",
+    icon: "/images/featured/wireless.jpeg",
     albumType: "data"
   },
   {
-    title: "CCTV",
-    subtitle: "Advanced video surveillance systems with high-definition cameras, remote monitoring, and intelligent analytics for complete security coverage.",
-    icon: "/images/featured/security.jpg",
+    title: "Integrated Electrification Systems",
+    subtitle: "Smart electrical panels, solar integration, EV charging, energy storage systems, and micro-grids. Create energy-efficient spaces with modern technologies that maximize your property's energy potential.",
+    icon: "/images/featured/audiovisual.jpg",
     albumType: "cctv"
   },
   {
-    title: "Consultation Services",
-    subtitle: "Expert technology consulting, system design, and project management to help you make informed decisions about your IT infrastructure.",
-    icon: "/images/featured/consultation.jpg",
+    title: "Smart Electrical Panels",
+    subtitle: "Certified installer of Span Smart Panels. Intelligently manage solar power, home batteries, and EV charging. Enable fast Level 2 charging and future bi-directional EV chargers.",
+    icon: "/images/featured/security.jpg",
     albumType: "consultation"
   },
   {
-    title: "IT Services",
-    subtitle: "Complete IT solutions including hardware, software, network management, and technical support for modern businesses.",
+    title: "EV Charging Solutions",
+    subtitle: "Level 2 EV chargers for fast charging. Future bi-directional chargers will enable both charging your car and back-feeding energy to power your home during utility outages.",
     icon: "/images/featured/IT.jpg",
     albumType: "it"
   }
