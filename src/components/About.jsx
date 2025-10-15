@@ -10,13 +10,13 @@ const About = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
       id="aboutus"
-      className="flex flex-col items-center justify-center font-garamond py-20"
+      className="flex flex-col items-center justify-center font-merriweather py-20"
     >
       <motion.div
         variants={fadeIn("up", "tween", 0.2, 1)}
-        className="flex flex-col items-center justify-center font-garamond max-w-4xl px-6"
+        className="flex flex-col items-center justify-center font-merriweather max-w-4xl px-6"
       >
-        <h1 className="z-10 text-center font-garamond text-2xl font-semibold md:text-5xl mb-8">
+        <h1 className="z-10 text-center font-merriweather text-2xl font-semibold md:text-5xl mb-8">
           About Campbell Bay Electric
         </h1>
         <div className="text-center space-y-6">

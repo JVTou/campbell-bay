@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         mono: ["JetBrains Mono", "monospace"],
-        garamond: ["JetBrains Mono", "monospace"],
+        merriweather: ["Merriweather", "serif"],
       },
     },
   },

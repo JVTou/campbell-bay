@@ -6,51 +6,67 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { fadeIn, staggerContainer } from "../utils/motion";
 
-// Photo data for each business line
+// Photo data for each business line using actual project photos
 const businessPhotos = {
-  security: [
-    { src: "/images/wireless/1.png", width: 1567, height: 781 },
-    { src: "/images/wireless/2.jpg", width: 1920, height: 2560 },
-    { src: "/images/wireless/3.jpg", width: 1920, height: 3413 },
-    { src: "/images/wireless/4.jpg", width: 1920, height: 1305 },
-    { src: "/images/wireless/5.jpg", width: 1920, height: 2561 },
-    { src: "/images/wireless/6.jpg", width: 1920, height: 1440 },
-    { src: "/images/wireless/7.jpg", width: 1920, height: 2560 },
-    { src: "/images/wireless/8.jpg", width: 3072, height: 4080 },
-    { src: "/images/wireless/9.jpg", width: 3072, height: 4080 },
+  residential: [
+    { src: "/media/Lighting/IMG_4589.jpg", width: 1920, height: 2560 },
+    { src: "/media/Lighting/IMG_5725.heic", width: 1920, height: 2560 },
+    { src: "/media/Lighting/IMG_5764.jpg", width: 1920, height: 2560 },
+    { src: "/media/Lighting/IMG_5936.heic", width: 1920, height: 2560 },
+    { src: "/media/Lighting/IMG-0753.jpg", width: 1920, height: 2560 },
+    { src: "/media/Lighting/2BEDA6BE-999F-4CF1-9DF1-81A9E74DC20D.jpg", width: 1920, height: 2560 },
+    { src: "/media/Lighting/94C3AAE3-6FD4-446D-85E6-52EBE378EED8.jpg", width: 1920, height: 2560 },
+    { src: "/media/Lighting/B522ACA7-FCFD-4BCE-AB48-C8767CD6BE0F.jpg", width: 1920, height: 2560 },
+    { src: "/media/Lighting/F22C4C04-AD45-49D1-AF4F-BE6C551E329F.jpg", width: 1920, height: 2560 },
   ],
-  data: [
-    { src: "/images/data/data1.jpg", width: 3072, height: 4080 },
-    { src: "/images/data/data2.jpg", width: 3072, height: 4080 },
-    { src: "/images/data/data3.jpg", width: 1920, height: 2560 },
-    { src: "/images/data/data4.jpg", width: 1920, height: 2560 },
-    { src: "/images/data/data5.jpg", width: 3264, height: 2448 },
+  commercial: [
+    { src: "/media/Conduit/IMG_4590.jpg", width: 1920, height: 2560 },
+    { src: "/media/Conduit/IMG_6534.jpg", width: 1920, height: 2560 },
+    { src: "/media/Conduit/IMG_7219.jpg", width: 1920, height: 2560 },
+    { src: "/media/Conduit/IMG-0747.jpg", width: 1920, height: 2560 },
+    { src: "/media/Conduit/IMG-0750.jpg", width: 1920, height: 2560 },
   ],
-  cctv: [
-    { src: "/images/cctv/1.jpg", width: 1920, height: 2560 },
-    { src: "/images/cctv/2.jpg", width: 1920, height: 3413 },
-    { src: "/images/cctv/3.jpg", width: 1920, height: 2560 },
-    { src: "/images/cctv/4.jpg", width: 1920, height: 3412 },
-    { src: "/images/cctv/5.jpg", width: 1920, height: 2560 },
-    { src: "/images/cctv/6.jpg", width: 1920, height: 2560 },
-    { src: "/images/cctv/7.jpg", width: 1920, height: 2560 },
+  electrification: [
+    { src: "/media/Electrical Panels/IMG_4586.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4587.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4588.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4591.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4592.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_5858.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_5986.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_6503.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7365.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7428.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7520.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7792.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7793.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7794.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7795.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7797.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7798.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7799.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7800.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG-0754.jpg", width: 1920, height: 2560 },
   ],
-  consultation: [
-    { src: "/images/consultation/alvaro-reyes-qWwpHwip31M-unsplash.jpg", width: 5184, height: 3456 },
-    { src: "/images/consultation/benjamin-child-GWe0dlVD9e0-unsplash.jpg", width: 5184, height: 3456 },
-    { src: "/images/consultation/charlesdeluvio-Lks7vei-eAg-unsplash.jpg", width: 5418, height: 3612 },
-    { src: "/images/consultation/consultation1.jpg", width: 7360, height: 4912 },
-    { src: "/images/consultation/headway-5QgIuuBxKwM-unsplash.jpg", width: 5472, height: 3648 },
-    { src: "/images/consultation/priscilla-du-preez-nNMBa7Y1Ymk-unsplash.jpg", width: 3407, height: 5111 },
-    { src: "/images/consultation/sean-pollock-PhYq704ffdA-unsplash.jpg", width: 6000, height: 4000 },
+  smartPanels: [
+    { src: "/media/Electrical Panels/IMG_4586.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4587.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4588.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4591.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_4592.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_5858.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_5986.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_6503.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7365.jpg", width: 1920, height: 2560 },
+    { src: "/media/Electrical Panels/IMG_7428.jpg", width: 1920, height: 2560 },
   ],
-  it: [
-    { src: "/images/IT/ilya-pavlov-OqtafYT5kTw-unsplash.jpg", width: 3543, height: 2365 },
-    { src: "/images/IT/jainath-ponnala-9wWX_jwDHeM-unsplash.jpg", width: 6720, height: 4480 },
-    { src: "/images/IT/markus-spiske-70Rir5vB96U-unsplash.jpg", width: 5760, height: 3840 },
-    { src: "/images/IT/sammyayot254-knUZi7dzb58-unsplash.jpg", width: 2122, height: 2829 },
-    { src: "/images/IT/sammyayot254-vIQDv6tUHYk-unsplash.jpg", width: 2828, height: 2122 },
-    { src: "/images/IT/samuel-ramos-tYvZUVEve6s-unsplash.jpg", width: 6000, height: 4000 },
+  evCharging: [
+    { src: "/media/EV chargers/IMG-9290.jpg", width: 1920, height: 2560 },
+    { src: "/media/EV chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg", width: 1152, height: 1536 },
+    { src: "/media/EV chargers/89e38164-0cf8-47bd-8192-21654cbe2467.jpg", width: 1920, height: 2560 },
+  ],
+  solar: [
+    { src: "/media/Solar/Photo-Feb-17-10-40-48-AM.jpg", width: 1920, height: 2560 },
   ]
 };
 
@@ -58,32 +74,38 @@ const businessLines = [
   {
     title: "Residential Services",
     subtitle: "Electrical panel upgrades, smart house features, whole house rewires, emergency power systems, generator installs, battery backup installs, recessed lighting, and low-voltage wiring.",
-    icon: "/images/featured/cableinfrastructure.jpeg",
-    albumType: "security"
+    icon: "/media/Lighting/IMG_4589.jpg",
+    albumType: "residential"
   },
   {
     title: "Commercial Services", 
     subtitle: "Transformers, phase converters, commercial tenant improvements, commercial services and troubleshooting, exterior lighting, high-voltage lighting, and parking lot lighting.",
-    icon: "/images/featured/wireless.jpeg",
-    albumType: "data"
+    icon: "/media/Conduit/IMG_4590.jpg",
+    albumType: "commercial"
   },
   {
     title: "Integrated Electrification Systems",
     subtitle: "Smart electrical panels, solar integration, EV charging, energy storage systems, and micro-grids. Create energy-efficient spaces with modern technologies that maximize your property's energy potential.",
-    icon: "/images/featured/audiovisual.jpg",
-    albumType: "cctv"
+    icon: "/media/Electrical Panels/IMG_4586.jpg",
+    albumType: "electrification"
   },
   {
     title: "Smart Electrical Panels",
     subtitle: "Certified installer of Span Smart Panels. Intelligently manage solar power, home batteries, and EV charging. Enable fast Level 2 charging and future bi-directional EV chargers.",
-    icon: "/images/featured/security.jpg",
-    albumType: "consultation"
+    icon: "/media/Electrical Panels/IMG_4587.jpg",
+    albumType: "smartPanels"
   },
   {
     title: "EV Charging Solutions",
     subtitle: "Level 2 EV chargers for fast charging. Future bi-directional chargers will enable both charging your car and back-feeding energy to power your home during utility outages.",
-    icon: "/images/featured/IT.jpg",
-    albumType: "it"
+    icon: "/media/EV chargers/IMG-9290.jpg",
+    albumType: "evCharging"
+  },
+  {
+    title: "Solar Integration",
+    subtitle: "Partner with leading solar installers for seamless solar installations. We handle the electrical integration to ensure safe, reliable, and long-lasting solar power systems.",
+    icon: "/media/Solar/Photo-Feb-17-10-40-48-AM.jpg",
+    albumType: "solar"
   }
 ];
 
@@ -188,8 +210,8 @@ class BusinessCard extends React.Component {
           <div className="business-card-info-wrapper">
             <div className="business-card-info">
               <div className="business-card-info-title">
-                <h3 className="font-garamond text-2xl font-bold text-white mb-2">{title}</h3>
-                <h4 className="font-garamond text-sm text-gray-200 leading-relaxed">{subtitle}</h4>
+                <h3 className="font-merriweather text-2xl font-bold text-white mb-2">{title}</h3>
+                <h4 className="font-merriweather text-sm text-gray-200 leading-relaxed">{subtitle}</h4>
               </div>
             </div>
           </div>
@@ -231,7 +253,7 @@ export default function SecurityPhotoAlbum() {
       <motion.h1
         variants={fadeIn("up", "tween", 0.2, 1)}
         id="projects"
-        className="font-garamond text-center text-2xl font-semibold md:text-5xl py-5"
+        className="font-merriweather text-center text-2xl font-semibold md:text-5xl py-5"
       >
         Our Projects
       </motion.h1>

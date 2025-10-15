@@ -15,17 +15,21 @@ const LogoClouds = () => {
       className="flex w-full items-center justify-center py-10"
     >
       <motion.div variants={fadeIn("up", "tween", 0.2, 1)}>
-        <h2 className="text-base-400 mb-12 text-center font-garamond text-lg font-semibold leading-8 z-20">
+        <h2 className="text-base-400 mb-12 text-center font-merriweather text-lg font-semibold leading-8 z-20">
           Trusted Partners & Industry Leaders
         </h2>
         <div className="wrap flex flex-wrap justify-center gap-10 xl:gap-32">
           {logos.map((logo, index) => (
-            <img
+            <div
               key={index}
-              className="w-32 grayscale"
-              src={logo.src}
-              alt={logo.alt}
-            />
+              className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md"
+            >
+              <img
+                className="w-32 h-20 object-contain"
+                src={logo.src}
+                alt={logo.alt}
+              />
+            </div>
           ))}
         </div>
       </motion.div>

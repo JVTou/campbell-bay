@@ -58,10 +58,10 @@ const Testimonial = () => {
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="flex flex-col items-center justify-center"
       >
-        <h1 className="z-10 text-center font-garamond text-2xl font-semibold md:text-5xl">
+        <h1 className="z-10 text-center font-merriweather text-2xl font-semibold md:text-5xl">
           Our Partnerships
         </h1>
-        <span className="z-10 text-md mt-2 px-2 font-garamond md:mt-4 md:px-5 md:text-xl">
+        <span className="z-10 text-md mt-2 px-2 font-merriweather md:mt-4 md:px-5 md:text-xl">
           Trusted by Industry Leaders
         </span>
       </motion.div>
@@ -92,7 +92,7 @@ const Testimonial = () => {
             <SwiperSlide className="h-full" key={index}>
               <div className="z-10 flex h-full items-center justify-center pb-8 md:pb-12 px-2 sm:px-4">
                 <figure className="w-full max-w-2xl sm:max-w-3xl md:max-w-4xl">
-                  <blockquote className="text-center font-garamond leading-6 sm:leading-8 text-sm sm:text-base md:text-lg lg:text-xl text-base-content px-1 sm:px-2">
+                  <blockquote className="text-center font-merriweather leading-6 sm:leading-8 text-sm sm:text-base md:text-lg lg:text-xl text-base-content px-1 sm:px-2">
                     <p>"{item.description}"</p>
                   </blockquote>
                     <div className="mt-6 md:mt-10 flex flex-col items-center">
@@ -104,11 +104,11 @@ const Testimonial = () => {
                         />
                       </div>
                       <div className="mt-3 md:mt-4 flex flex-col sm:flex-row items-center text-center sm:text-left">
-                        <div className="font-garamond text-lg sm:text-xl font-semibold text-base-content">
+                        <div className="font-merriweather text-lg sm:text-xl font-semibold text-base-content">
                           {item.company}
                         </div>
                         <span className="hidden sm:inline mx-2 text-base-content/50">|</span>
-                        <span className="text-center font-garamond text-xs sm:text-sm text-base-content/70 mt-1 sm:mt-0">
+                        <span className="text-center font-merriweather text-xs sm:text-sm text-base-content/70 mt-1 sm:mt-0">
                           {item.companyDescription}
                         </span>
                     </div>

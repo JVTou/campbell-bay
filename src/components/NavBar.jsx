@@ -15,7 +15,7 @@ const NavBar = () => {
 
   return (
     <div className="sticky top-4 z-50 flex justify-center -mt-20">
-      <div className="navbar rounded-full bg-base-100/90 py-0 shadow-2xl outline outline-base-content/5 backdrop-blur flex w-5/6">
+      <div className="navbar rounded-full bg-base-100/90 py-4 shadow-2xl outline outline-base-content/5 backdrop-blur flex w-5/6">
         <div className="navbar-start flex items-center">
           <div className="dropdown">
             <div
@@ -41,7 +41,7 @@ const NavBar = () => {
             <ul className="menu dropdown-content menu-md z-[1] mt-3 w-96 gap-2 rounded-box bg-base-100 p-2 shadow">
               {navigation.map((item, index) => (
                 <li key={index}>
-                  <a key={item.name} href={item.href} className="font-garamond">
+                  <a key={item.name} href={item.href} className="font-merriweather">
                     {item.name}
                   </a>
                 </li>
@@ -50,9 +50,9 @@ const NavBar = () => {
           </div>
           <a
             href="/"
-            className="hidden md:flex btn btn-ghost rounded-full font-garamond text-lg font-semibold flex-row items-center"
+            className="hidden md:flex btn btn-ghost rounded-full font-merriweather text-lg font-semibold flex-row items-center"
           >
-            <div className="w-12">
+            <div className="w-16">
               <div className="rounded object-contain">
                 <img src="/media/logo/Tab-Icon.png" alt="Campbell Bay Electric Logo" />
               </div>
@@ -60,8 +60,8 @@ const NavBar = () => {
             Campbell Bay Electric
           </a>
         </div>
-        <div className="navbar-center">
-          <div className="w-12 md:hidden">
+        <div className="navbar-center flex justify-center">
+          <div className="w-16 md:hidden">
             <div className="rounded object-contain">
               <img src="/media/logo/Tab-Icon.png" alt="Campbell Bay Electric Logo" />
             </div>
@@ -75,7 +75,7 @@ const NavBar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`btn btn-ghost rounded-full font-garamond text-sm ${
+                  className={`btn btn-ghost rounded-full font-merriweather text-sm ${
                     active === item.name ? "bg-base-300" : ""
                   }`}
                   onClick={() => setActive(item.name)}

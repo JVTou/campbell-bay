@@ -16,10 +16,10 @@ const Contact = () => {
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="flex w-full flex-col justify-center"
       >
-        <h1 className="z-10 text-center font-garamond text-2xl font-semibold md:text-5xl">
+        <h1 className="z-10 text-center font-merriweather text-2xl font-semibold md:text-5xl">
           Get in touch
         </h1>
-        <span className="z-10 text-md mt-2 px-2 text-center font-garamond md:mt-4 md:px-5 md:text-xl">
+        <span className="z-10 text-md mt-2 px-2 text-center font-merriweather md:mt-4 md:px-5 md:text-xl">
           Contact us now and scale your business
         </span>
       </motion.div>
@@ -32,7 +32,7 @@ const Contact = () => {
             <div className="mt-6 space-y-8 md:mt-8">
               {/* Office Location */}
               <div>
-                <h3 className="text-base-400 font-semibold mb-3 font-garamond">Our Office</h3>
+                <h3 className="text-base-400 font-semibold mb-3 font-merriweather">Our Office</h3>
                 <p className="-mx-2 flex items-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,15 +53,30 @@ const Contact = () => {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span className="mx-2 font-garamond text-base-content">
-                    <strong className="font-garamond">Address:</strong> 205 E Alma Ave, San Jose, CA 95112
+                  <span className="mx-2 font-merriweather text-base-content">
+                    <strong className="font-merriweather">Address:</strong> 205 E Alma Ave, San Jose, CA 95112
                   </span>
                 </p>
+                
+                {/* Google Maps Embed */}
+                <div className="mt-4">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.1234567890!2d-121.8894!3d37.3382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb8b8b8b8b8b%3A0x1234567890abcdef!2s205%20E%20Alma%20Ave%2C%20San%20Jose%2C%20CA%2095112!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    width="100%"
+                    height="200"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Campbell Bay Electric Location - 205 E Alma Ave, San Jose, CA"
+                    className="rounded-lg shadow-md"
+                  ></iframe>
+                </div>
               </div>
 
               {/* Contact Info */}
               <div>
-                <h3 className="text-base-400 font-semibold mb-3 font-garamond">Contact</h3>
+                <h3 className="text-base-400 font-semibold mb-3 font-merriweather">Contact</h3>
                 <p className="-mx-2 flex items-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +92,8 @@ const Contact = () => {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="mx-2 font-garamond text-base-content">
-                    <strong className="font-garamond">Email:</strong> info@campbellbayelectric.com
+                  <span className="mx-2 font-merriweather text-base-content">
+                    <strong className="font-merriweather">Email:</strong> info@campbellbayelectric.com
                   </span>
                 </p>
                 <p className="-mx-2 flex items-start mt-3">
@@ -96,14 +111,14 @@ const Contact = () => {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  <span className="mx-2 font-garamond text-base-content">
-                    <strong className="font-garamond">Phone:</strong> (408) 910-6195
+                  <span className="mx-2 font-merriweather text-base-content">
+                    <strong className="font-merriweather">Phone:</strong> (408) 891-4470
                   </span>
                 </p>
               </div>
 
               <div className="mt-6 w-80 md:mt-8">
-                <h3 className="text-base-400 font-garamond">Follow us</h3>
+                <h3 className="text-base-400 font-merriweather">Follow us</h3>
 
                 <div className="-mx-1.5 mt-4 flex ">
                   <a
@@ -138,11 +153,11 @@ const Contact = () => {
 
           <div className="z-10 card mt-8 lg:mx-6 lg:w-1/2">
             <div className="card-body mx-auto w-full overflow-hidden rounded-lg px-8 py-10 shadow-xl outline outline-base-content/5 lg:max-w-xl">
-              <h1 className="card-title font-garamond">Ask us anything</h1>
+              <h1 className="card-title font-merriweather">Ask us anything</h1>
 
               <form className="mt-6" netlify name="contact">
                 <div className="flex-1">
-                  <label htmlFor="name" className="mb-2 block text-sm font-garamond">
+                  <label htmlFor="name" className="mb-2 block text-sm font-merriweather">
                     Full Name
                   </label>
                   <input
@@ -150,12 +165,12 @@ const Contact = () => {
                     autoComplete="name"
                     type="text"
                     placeholder="Your Name"
-                    className="input input-bordered w-full font-garamond"
+                    className="input input-bordered w-full font-merriweather"
                   />
                 </div>
 
                 <div className="mt-6 flex-1">
-                  <label htmlFor="email" className="mb-2 block text-sm font-garamond">
+                  <label htmlFor="email" className="mb-2 block text-sm font-merriweather">
                     Email address
                   </label>
                   <input
@@ -163,24 +178,24 @@ const Contact = () => {
                     autoComplete="email"
                     type="email"
                     placeholder="abcd@example.com"
-                    className="input input-bordered w-full font-garamond"
+                    className="input input-bordered w-full font-merriweather"
                   />
                 </div>
 
                 <div className="mt-6 w-full">
-                  <label htmlFor="message" className="mb-2 block text-sm font-garamond">
+                  <label htmlFor="message" className="mb-2 block text-sm font-merriweather">
                     Message
                   </label>
                   <textarea
                     id="message"
                     autoComplete="message"
-                    className="textarea textarea-bordered w-full font-garamond"
+                    className="textarea textarea-bordered w-full font-merriweather"
                     placeholder="Message"
                   ></textarea>
                 </div>
 
                 <button
-                  className="btn btn-neutral mt-6 w-full transform px-6 py-3 text-sm font-medium capitalize duration-300 font-garamond"
+                  className="btn btn-neutral mt-6 w-full transform px-6 py-3 text-sm font-medium capitalize duration-300 font-merriweather"
                   type="submit"
                 >
                   get in touch
