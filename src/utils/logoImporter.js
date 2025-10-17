@@ -35,6 +35,11 @@ export const getLogos = () => {
       src: '/images/logo/span.png',
       alt: 'Span',
       filename: 'span.png'
+    },
+    {
+      src: '/images/logo/tesla-powerwall.png',
+      alt: 'Tesla Powerwall Certified Installer',
+      filename: 'tesla-powerwall.png'
     }
   ];
 

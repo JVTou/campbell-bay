@@ -2,11 +2,10 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import LogoClouds from "./components/LogoClouds";
-import Map from "./components/Map";
 import NavBar from "./components/NavBar";
 import PhotoAlbum from "./components/PhotoAlbum";
 import Services from "./components/Services";
-import About from "./components/About";
+import AboutMapSection from "./components/AboutMapSection";
 import Testimonial from "./components/Testimonial";
 
 function App() {
@@ -17,8 +16,7 @@ function App() {
       <LogoClouds />
       <Services />
       <Testimonial />
-      <About />
-      <Map />
+      <AboutMapSection />
       <Contact />
       <PhotoAlbum />
       <Footer />

@@ -55,7 +55,7 @@ const Services = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
       id="services"
-      className="mt-10 flex flex-col items-center justify-center md:mt-20"
+      className="mt-10 flex flex-col items-center justify-center md:mt-20 md:px-20 px-4"
     >
       <motion.div
         variants={fadeIn("right", "tween", 0.2, 1)}

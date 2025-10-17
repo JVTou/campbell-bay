@@ -12,36 +12,41 @@ import {
   Mousewheel,
   Keyboard,
 } from "swiper/modules";
-const partnerships = [
+const testimonials = [
   {
-    company: "Tesla",
-    companyDescription: "The world's leading electric vehicle and clean energy company",
-    description: "Our long-standing partnership with Tesla has been built on trust, innovation, and shared vision. Over the years, we've delivered comprehensive network infrastructure and security solutions across their global manufacturing facilities, supporting their mission to accelerate the world's transition to sustainable energy. This enduring collaboration continues to drive technological excellence.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
+    name: "Orvick Management Group, Inc.",
+    role: "Property Management Company",
+    description: "Campbell Bay Electric has been our trusted electrical contractor for over five years. Their team consistently delivers exceptional work on our commercial properties, from routine maintenance to complex electrical upgrades. Their attention to detail, reliability, and professional service make them our go-to choice for all electrical needs.",
+    image: "/media/customers/orvick.jpg",
+    rating: 5,
   },
   {
-    company: "Silicon Valley Bank",
-    companyDescription: "A leading financial services company serving the innovation economy",
-    description: "Our deep-rooted partnership with Silicon Valley Bank spans multiple years of mutual growth and success. We've consistently delivered robust IT infrastructure and security solutions that have supported their mission of serving the innovation economy. This lasting relationship has been built on our shared commitment to excellence and innovation in financial technology.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Silicon_Valley_Bank_logo%2C_2022.svg",
+    name: "Sarah & Michael Johnson",
+    role: "Homeowners",
+    description: "We couldn't be happier with the electrical work Campbell Bay Electric did on our home renovation. They installed new outlets, upgraded our panel, and added beautiful recessed lighting throughout. The team was professional, clean, and completed everything on time and within budget. Highly recommended!",
+    image: null,
+    rating: 5,
   },
   {
-    company: "Lucid Motors",
-    companyDescription: "Pioneering the future of luxury electric vehicles",
-    description: "Our enduring partnership with Lucid Motors has been instrumental in supporting their vision of creating the most advanced electric vehicles. Through years of collaboration, we've provided essential network infrastructure and security systems that have grown alongside their state-of-the-art manufacturing and research facilities. This long-term relationship continues to drive innovation.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Lucid_Motors_logo.svg",
+    name: "David Chen",
+    role: "Homeowner",
+    description: "When we needed to install an EV charger for our new electric vehicle, Campbell Bay Electric made the process seamless. They handled all the permits, installed the charger properly, and even gave us tips on optimizing our home's electrical efficiency. Great service and fair pricing!",
+    image: null,
+    rating: 5,
   },
   {
-    company: "Lam Research",
-    companyDescription: "A global leader in semiconductor equipment and services",
-    description: "Our longstanding collaboration with Lam Research has been a cornerstone of our success in the semiconductor industry. Over the years, we've implemented advanced IT solutions for their precision manufacturing environments, supporting their mission of enabling the next generation of technology. This enduring partnership has been built on mutual trust and shared technological excellence.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Lam_Research_logo.svg",
+    name: "Jennifer Martinez",
+    role: "Homeowner",
+    description: "After a power surge damaged several appliances, Campbell Bay Electric came out immediately to assess the situation. They not only fixed the electrical issues but also installed surge protection to prevent future problems. Their emergency response was outstanding, and we felt safe and secure throughout the process.",
+    image: null,
+    rating: 5,
   },
   {
-    company: "Redwood Materials",
-    companyDescription: "Creating a circular supply chain for lithium-ion batteries",
-    description: "Our growing partnership with Redwood Materials has been built on a foundation of shared environmental values and technological innovation. We're proud to support their mission of creating a circular supply chain for lithium-ion batteries through our technology solutions. This promising long-term collaboration continues to evolve as we work together toward sustainable battery recycling and materials recovery.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/Redwood_Materials_Low_Resolution.png",
+    name: "Robert & Linda Thompson",
+    role: "Homeowners",
+    description: "We've used Campbell Bay Electric for multiple projects over the years - from installing a whole-house generator to updating our kitchen lighting. Each time, they've exceeded our expectations with their quality workmanship and customer service. They're honest, reliable, and truly care about their customers.",
+    image: null,
+    rating: 5,
   },
 ];
 const Testimonial = () => {
@@ -88,7 +93,7 @@ const Testimonial = () => {
           modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
           className="w-full h-fit sm:h-96 rounded-xl border border-base-content/10"
         >
-          {partnerships.map((item, index) => (
+          {testimonials.map((item, index) => (
             <SwiperSlide className="h-full" key={index}>
               <div className="z-10 flex h-full items-center justify-center pb-8 md:pb-12 px-2 sm:px-4">
                 <figure className="w-full max-w-2xl sm:max-w-3xl md:max-w-4xl">
@@ -99,17 +104,16 @@ const Testimonial = () => {
                       <div className="w-1/2 sm:w-1/3 flex justify-center">
                         <img
                           className="h-12 sm:h-16 md:h-20 w-auto object-contain"
-                          src={item.logo}
-                          alt={`${item.company} logo`}
+                          src={item.image}
+                          alt={`${item.name} logo`}
                         />
                       </div>
                       <div className="mt-3 md:mt-4 flex flex-col sm:flex-row items-center text-center sm:text-left">
                         <div className="font-merriweather text-lg sm:text-xl font-semibold text-base-content">
-                          {item.company}
+                          {item.name}
                         </div>
-                        <span className="hidden sm:inline mx-2 text-base-content/50">|</span>
-                        <span className="text-center font-merriweather text-xs sm:text-sm text-base-content/70 mt-1 sm:mt-0">
-                          {item.companyDescription}
+                        <span className="text-center font-merriweather text-xs sm:text-sm text-base-content/70 mt-1">
+                          {item.role}
                         </span>
                     </div>
                     </div>

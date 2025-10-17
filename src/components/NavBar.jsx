@@ -50,14 +50,16 @@ const NavBar = () => {
           </div>
           <a
             href="/"
-            className="hidden md:flex btn btn-ghost rounded-full font-merriweather text-lg font-semibold flex-row items-center"
+            className="hidden md:flex btn btn-ghost rounded-full font-merriweather text-lg font-semibold h-16 min-h-16 flex-row items-center justify-center gap-3 px-4"
           >
-            <div className="w-16">
-              <div className="rounded object-contain">
-                <img src="/media/logo/Tab-Icon.png" alt="Campbell Bay Electric Logo" />
-              </div>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img 
+                src="/media/logo/Tab-Icon.png" 
+                alt="Campbell Bay Electric Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
-            Campbell Bay Electric
+            <span>Campbell Bay Electric</span>
           </a>
         </div>
         <div className="navbar-center flex justify-center">

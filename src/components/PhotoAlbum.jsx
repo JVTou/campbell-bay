@@ -8,17 +8,6 @@ import { fadeIn, staggerContainer } from "../utils/motion";
 
 // Photo data for each business line using actual project photos
 const businessPhotos = {
-  residential: [
-    { src: "/media/Lighting/IMG_4589.jpg", width: 1920, height: 2560 },
-    { src: "/media/Lighting/IMG_5725.heic", width: 1920, height: 2560 },
-    { src: "/media/Lighting/IMG_5764.jpg", width: 1920, height: 2560 },
-    { src: "/media/Lighting/IMG_5936.heic", width: 1920, height: 2560 },
-    { src: "/media/Lighting/IMG-0753.jpg", width: 1920, height: 2560 },
-    { src: "/media/Lighting/2BEDA6BE-999F-4CF1-9DF1-81A9E74DC20D.jpg", width: 1920, height: 2560 },
-    { src: "/media/Lighting/94C3AAE3-6FD4-446D-85E6-52EBE378EED8.jpg", width: 1920, height: 2560 },
-    { src: "/media/Lighting/B522ACA7-FCFD-4BCE-AB48-C8767CD6BE0F.jpg", width: 1920, height: 2560 },
-    { src: "/media/Lighting/F22C4C04-AD45-49D1-AF4F-BE6C551E329F.jpg", width: 1920, height: 2560 },
-  ],
   commercial: [
     { src: "/media/Conduit/IMG_4590.jpg", width: 1920, height: 2560 },
     { src: "/media/Conduit/IMG_6534.jpg", width: 1920, height: 2560 },
@@ -27,43 +16,43 @@ const businessPhotos = {
     { src: "/media/Conduit/IMG-0750.jpg", width: 1920, height: 2560 },
   ],
   electrification: [
-    { src: "/media/Electrical Panels/IMG_4586.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4587.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4588.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4591.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4592.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_5858.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_5986.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_6503.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7365.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7428.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7520.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7792.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7793.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7794.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7795.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7797.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7798.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7799.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7800.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG-0754.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4586.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4587.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4588.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4591.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4592.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_5858.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_5986.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_6503.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7365.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7428.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7520.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7792.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7793.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7794.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7795.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7797.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7798.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7799.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7800.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG-0754.jpg", width: 1920, height: 2560 },
   ],
   smartPanels: [
-    { src: "/media/Electrical Panels/IMG_4586.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4587.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4588.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4591.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_4592.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_5858.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_5986.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_6503.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7365.jpg", width: 1920, height: 2560 },
-    { src: "/media/Electrical Panels/IMG_7428.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4586.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4587.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4588.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4591.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_4592.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_5858.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_5986.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_6503.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7365.jpg", width: 1920, height: 2560 },
+    { src: "/media/Panels/IMG_7428.jpg", width: 1920, height: 2560 },
   ],
   evCharging: [
-    { src: "/media/EV chargers/IMG-9290.jpg", width: 1920, height: 2560 },
-    { src: "/media/EV chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg", width: 1152, height: 1536 },
-    { src: "/media/EV chargers/89e38164-0cf8-47bd-8192-21654cbe2467.jpg", width: 1920, height: 2560 },
+    { src: "/media/Chargers/IMG-9290.jpg", width: 1920, height: 2560 },
+    { src: "/media/Chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg", width: 1152, height: 1536 },
+    { src: "/media/Chargers/89e38164-0cf8-47bd-8192-21654cbe2467.jpg", width: 1920, height: 2560 },
   ],
   solar: [
     { src: "/media/Solar/Photo-Feb-17-10-40-48-AM.jpg", width: 1920, height: 2560 },
@@ -71,12 +60,6 @@ const businessPhotos = {
 };
 
 const businessLines = [
-  {
-    title: "Residential Services",
-    subtitle: "Electrical panel upgrades, smart house features, whole house rewires, emergency power systems, generator installs, battery backup installs, recessed lighting, and low-voltage wiring.",
-    icon: "/media/Lighting/IMG_4589.jpg",
-    albumType: "residential"
-  },
   {
     title: "Commercial Services", 
     subtitle: "Transformers, phase converters, commercial tenant improvements, commercial services and troubleshooting, exterior lighting, high-voltage lighting, and parking lot lighting.",
@@ -86,19 +69,19 @@ const businessLines = [
   {
     title: "Integrated Electrification Systems",
     subtitle: "Smart electrical panels, solar integration, EV charging, energy storage systems, and micro-grids. Create energy-efficient spaces with modern technologies that maximize your property's energy potential.",
-    icon: "/media/Electrical Panels/IMG_4586.jpg",
+    icon: "/media/Panels/IMG_4586.jpg",
     albumType: "electrification"
   },
   {
     title: "Smart Electrical Panels",
     subtitle: "Certified installer of Span Smart Panels. Intelligently manage solar power, home batteries, and EV charging. Enable fast Level 2 charging and future bi-directional EV chargers.",
-    icon: "/media/Electrical Panels/IMG_4587.jpg",
+    icon: "/media/Panels/IMG_4587.jpg",
     albumType: "smartPanels"
   },
   {
     title: "EV Charging Solutions",
     subtitle: "Level 2 EV chargers for fast charging. Future bi-directional chargers will enable both charging your car and back-feeding energy to power your home during utility outages.",
-    icon: "/media/EV chargers/IMG-9290.jpg",
+    icon: "/media/Chargers/IMG-9290.jpg",
     albumType: "evCharging"
   },
   {
@@ -253,10 +236,16 @@ export default function SecurityPhotoAlbum() {
       <motion.h1
         variants={fadeIn("up", "tween", 0.2, 1)}
         id="projects"
-        className="font-merriweather text-center text-2xl font-semibold md:text-5xl py-5"
+        className="font-merriweather text-center text-2xl font-semibold md:text-5xl py-5 text-white"
       >
         Our Projects
       </motion.h1>
+      <motion.p
+        variants={fadeIn("up", "tween", 0.3, 1)}
+        className="text-center text-white text-sm mb-8"
+      >
+        Click on any service below to view project photos
+      </motion.p>
       <motion.div 
         variants={fadeIn("up", "tween", 0.4, 1)}
         className="business-cards-container"
