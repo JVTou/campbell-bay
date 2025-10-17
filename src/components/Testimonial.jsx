@@ -21,31 +21,31 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Sarah & Michael Johnson",
-    role: "Homeowners",
+    name: "Michael Johnson",
+    role: "Homeowner",
     description: "We couldn't be happier with the electrical work Campbell Bay Electric did on our home renovation. They installed new outlets, upgraded our panel, and added beautiful recessed lighting throughout. The team was professional, clean, and completed everything on time and within budget. Highly recommended!",
-    image: null,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format",
     rating: 5,
   },
   {
     name: "David Chen",
     role: "Homeowner",
     description: "When we needed to install an EV charger for our new electric vehicle, Campbell Bay Electric made the process seamless. They handled all the permits, installed the charger properly, and even gave us tips on optimizing our home's electrical efficiency. Great service and fair pricing!",
-    image: null,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format",
     rating: 5,
   },
   {
     name: "Jennifer Martinez",
     role: "Homeowner",
     description: "After a power surge damaged several appliances, Campbell Bay Electric came out immediately to assess the situation. They not only fixed the electrical issues but also installed surge protection to prevent future problems. Their emergency response was outstanding, and we felt safe and secure throughout the process.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format",
     rating: 5,
   },
   {
-    name: "Robert & Linda Thompson",
-    role: "Homeowners",
+    name: "Robert Thompson",
+    role: "Homeowner",
     description: "We've used Campbell Bay Electric for multiple projects over the years - from installing a whole-house generator to updating our kitchen lighting. Each time, they've exceeded our expectations with their quality workmanship and customer service. They're honest, reliable, and truly care about their customers.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format",
     rating: 5,
   },
 ];
@@ -103,12 +103,12 @@ const Testimonial = () => {
                     <div className="mt-6 md:mt-10 flex flex-col items-center">
                       <div className="w-1/2 sm:w-1/3 flex justify-center">
                         <img
-                          className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+                          className="h-12 sm:h-16 md:h-20 w-12 sm:w-16 md:w-20 object-cover rounded-full"
                           src={item.image}
-                          alt={`${item.name} logo`}
+                          alt={`${item.name} photo`}
                         />
                       </div>
-                      <div className="mt-3 md:mt-4 flex flex-col sm:flex-row items-center text-center sm:text-left">
+                      <div className="mt-3 md:mt-4 flex flex-col items-center text-center">
                         <div className="font-merriweather text-lg sm:text-xl font-semibold text-base-content">
                           {item.name}
                         </div>
