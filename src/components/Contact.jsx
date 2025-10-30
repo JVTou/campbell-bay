@@ -1,6 +1,25 @@
 import React from "react";
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
+import ClipboardJS from "clipboard";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
+
+const emailTooltip = () => {
+  const emailElement = document.getElementById("emailtip");
+  if (emailElement) {
+    const clipboard = new ClipboardJS("#emailtip");
+    const copiedTippy = tippy("#emailtip", {
+      content: "Copied!",
+      trigger: "",
+    })[0];
+
+    clipboard.on("success", function (e) {
+      copiedTippy.show();
+      setTimeout(copiedTippy.hide, 2000);
+    });
+  }
+};
 
 const Contact = () => {
   return (
@@ -78,6 +97,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-base-400 font-semibold mb-3 font-merriweather">Contact</h3>
                 <p className="-mx-2 flex items-start">
+                  <a href="mailto:info@campbellbayelectric.com" id="emailtip" data-clipboard-text="info@campbellbayelectric.com" onClick={emailTooltip}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="text-base-400 mx-2 h-6 w-6 flex-shrink-0"
@@ -94,7 +114,7 @@ const Contact = () => {
                   </svg>
                   <span className="mx-2 font-merriweather text-base-content">
                     <strong className="font-merriweather">Email:</strong> info@campbellbayelectric.com
-                  </span>
+                  </span></a>
                 </p>
                 <p className="-mx-2 flex items-start mt-3">
                   <svg

@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-base-content/10">
           <div className="flex items-center justify-center py-6 font-merriweather text-sm lg:text-lg">
-            <h1>© Campbell Bay Electric 2019-{yearNow}. All rights reserved.</h1>
+            <h1>© Campbell Bay Electric 2020-{yearNow}. All rights reserved.</h1>
           </div>
         </div>
       </motion.div>

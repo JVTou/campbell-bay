@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import ClipboardJS from 'clipboard';
@@ -9,27 +9,62 @@ const AboutMapSection = () => {
   const mapRef = useRef(null);
   const toolTipRef = useRef(null);
   const stateDropdownRef = useRef(null);
+  const statsRef = useRef(null);
+  const [statsAnimated, setStatsAnimated] = useState(false);
 
   useEffect(() => {
     loadMap();
     stateDropdown();
-    emailTooltip();
+    observeStats();
   }, []);
 
-  const emailTooltip = () => {
-    const emailElement = document.getElementById("email");
-    if (emailElement) {
-      const clipboard = new ClipboardJS("#email");
-      const copiedTippy = tippy("#email", {
-        content: "Copied!",
-        trigger: "",
-      })[0];
 
-      clipboard.on("success", function (e) {
-        copiedTippy.show();
-        setTimeout(copiedTippy.hide, 2000);
+
+  // Animate stats when in view
+  const observeStats = () => {
+    const container = statsRef.current;
+    if (!container) return;
+
+    const targets = [
+      { id: "projectsCount", count: 1500, suffix: "+" },
+      { id: "partnersCount", count: 15, suffix: "+" },
+      { id: "yearsCount", count: 13, suffix: "+" },
+    ];
+
+    const animate = () => {
+      if (statsAnimated) return; // run once
+      setStatsAnimated(true);
+      const maxCount = Math.max(...targets.map((t) => t.count));
+      const duration = Math.max(800, Math.min(1600, (maxCount / 100) * 100));
+
+      targets.forEach((t) => {
+        const el = document.getElementById(t.id);
+        if (!el) return;
+        let current = 0;
+        const increment = Math.ceil(t.count / (duration / 16));
+        const interval = setInterval(() => {
+          current += increment;
+          if (current >= t.count) {
+            current = t.count;
+            clearInterval(interval);
+          }
+          el.textContent = `${current}${current === t.count ? t.suffix : ""}`;
+        }, 16);
       });
-    }
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animate();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    io.observe(container);
   };
 
   const loadMap = () => {
@@ -167,6 +202,50 @@ const AboutMapSection = () => {
       className="py-20"
     >
       <div className="max-w-7xl mx-auto px-6">
+        {/* Stats above and centered over the two columns */}
+        <div ref={statsRef} className="w-full">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-extrabold leading-9">
+              Trusted by property owners and partners
+            </h2>
+            <p className="mt-3 text-base md:text-lg text-base-content/70">
+              Real results delivered across the Bay Area.
+            </p>
+          </div>
+          <div className="my-8">
+            <div className="relative">
+              <div className="relative max-w-4xl mx-auto">
+                <dl className="bg-base-100 rounded-lg shadow-lg grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-base-200">
+                  <div className="flex flex-col p-6 text-center">
+                    <dt className="order-2 mt-2 text-sm md:text-lg font-medium leading-6 text-base-content/70">
+                      Partners
+                    </dt>
+                    <dd id="partnersCount" className="order-1 text-4xl md:text-5xl font-extrabold leading-none text-sky-400">
+                      0
+                    </dd>
+                  </div>
+                  <div className="flex flex-col p-6 text-center">
+                    <dt className="order-2 mt-2 text-sm md:text-lg font-medium leading-6 text-base-content/70">
+                      Projects Completed
+                    </dt>
+                    <dd id="projectsCount" className="order-1 text-4xl md:text-5xl font-extrabold leading-none text-sky-400">
+                      0
+                    </dd>
+                  </div>
+                  <div className="flex flex-col p-6 text-center">
+                    <dt className="order-2 mt-2 text-sm md:text-lg font-medium leading-6 text-base-content/70">
+                      Years of Experience
+                    </dt>
+                    <dd id="yearsCount" className="order-1 text-4xl md:text-5xl font-extrabold leading-none text-sky-400">
+                      0
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
           {/* About Section */}
           <motion.div
@@ -180,16 +259,13 @@ const AboutMapSection = () => {
               </h1>
               <div className="text-center space-y-4">
                 <p className="text-sm md:text-base leading-relaxed text-base-content/80">
-                  With over 13 years of industry-leading electrical experience collectively, our team at CBE has helped countless home and business owners find safe, efficient, and durable electric solutions at a reasonable price.
+                  With 13+ years of experience, CBE helps homeowners and businesses get safe, efficient, and durable electrical solutions at a fair price.
                 </p>
                 <p className="text-sm md:text-base leading-relaxed text-base-content/80">
-                  We offer a full range of residential and commercial electrical services, including electrical panel upgrades, smart house features, whole house rewires, emergency power systems, transformers, phase converters, and commercial tenant improvements. Our licensed professionals handle everything from basic electrical repairs to complex integrated electrification systems.
+                  We handle residential and commercial work—from panel upgrades and smart home features to whole‑home rewires, backup power, transformers, and tenant improvements.
                 </p>
                 <p className="text-sm md:text-base leading-relaxed text-base-content/80">
-                  As a certified installer of Span Smart Panels, we specialize in integrated electrification systems that help property owners create more energy-efficient spaces. Our team works with you to develop customized plans that maximize your property's energy potential through solar integration, EV charging, energy storage systems, and micro-grids.
-                </p>
-                <p className="text-sm md:text-base leading-relaxed text-base-content/80">
-                  Continuous training and review of the ever changing codes and related laws keeps our electricians up to date, and you are protected from costly mistakes. It is our mission to follow the industry-leading practices and present our customers with informed options for meeting the needs of their electrical projects. We provide you with prices and technicians you can trust, and we are very competitive in the markets we serve.
+                  As certified Span Smart Panel installers, we design integrated electrification—solar, EV charging, energy storage, and microgrids—tailored to your property. We stay current on codes and best practices to protect you from costly mistakes, offering clear options, upfront pricing, and licensed technicians you can trust.
                 </p>
               </div>
             </div>

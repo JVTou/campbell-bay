@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { fadeIn, staggerContainer } from "../utils/motion";
+import LogoClouds from "./LogoClouds";
+import HeroLogo from "../assets/logo/IMG_07122013.jpeg?w=800&format=webp&as=url";
 
 const Hero = () => {
   return (
@@ -12,11 +14,11 @@ const Hero = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
       id="home"
-        className="hero w-full h-screen flex justify-center items-center relative px-4 md:px-18 bg-[url('/images/icons/mobileGraphics.svg')] md:bg-[url('/images/icons/graphics.svg')] bg-cover bg-center bg-no-repeat bg-fixed"
+        className="hero w-full min-h-[75vh] md:min-h-[70vh] flex justify-center items-center relative z-0 px-4 md:px-18 bg-[url('/images/icons/mobileGraphics.svg')] md:bg-[url('/images/icons/graphics.svg')] bg-cover bg-center bg-no-repeat"
     >
       <motion.div
         variants={fadeIn("right", "tween", 0.2, 1)}
-        className="z-10 hero-content w-full flex flex-col lg:flex-row items-center justify-center px-4 pt-32"
+        className="z-10 hero-content w-full flex flex-col lg:flex-row items-center justify-center px-4"
       >
         {/* Left side - Text content */}
         <div className="text-center lg:text-start flex flex-col justify-center items-center lg:items-start lg:w-1/2">
@@ -27,7 +29,7 @@ const Hero = () => {
                  onInit={(typewriter) => {
                    typewriter
                      .pauseFor(1000)
-                     .typeString(`<span class="text-amber-400">Electrical<br>Services</span>`)
+                    .typeString(`<span class="text-sky-400">Electrical<br>Services</span>`)
                      .start();
                  }}
                 options={{
@@ -38,7 +40,7 @@ const Hero = () => {
                 }}
               />
             </div>
-             <span className="text-white md:text-base-content font-merriweather">since 2019</span>
+             <span className="text-white md:text-base-content font-merriweather">since 2020</span>
           </div>
           <div className="py-6 flex gap-2 max-lg:justify-center">
             <a
@@ -62,13 +64,15 @@ const Hero = () => {
           className="hidden lg:flex lg:w-1/2 justify-center items-center"
         >
           <img
-            src="/media/logo/IMG_07122013.jpeg"
+            src={HeroLogo}
             alt="Campbell Bay Electric Logo"
             className="max-w-full max-h-[500px] object-contain rounded-lg shadow-2xl"
+            loading="lazy"
           />
         </motion.div>
       </motion.div>
     </motion.div>
+    <LogoClouds />
     </>
   );
 };

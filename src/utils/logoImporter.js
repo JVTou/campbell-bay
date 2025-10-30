@@ -1,43 +1,53 @@
+// Optimized logo imports with vite-imagetools
+import LevitonLogo from "../assets/logo/leviton.png?w=200&format=webp&as=url";
+import SquareDLogo from "../assets/logo/square-d.webp?w=200&format=webp&as=url";
+import FranklinLogo from "../assets/logo/franklin.png?w=200&format=webp&as=url";
+import LutronLogo from "../assets/logo/lutron.png?w=200&format=webp&as=url";
+import SiemensLogo from "../assets/logo/siemens.svg"; // SVG doesn't need optimization
+import GeneracLogo from "../assets/logo/generac.png?w=200&format=webp&as=url";
+import SpanLogo from "../assets/logo/span.png?w=200&format=webp&as=url";
+import TeslaLogo from "../assets/logo/tesla-powerwall.png?w=200&format=webp&as=url";
+
 // Simple utility function to get logo data
 export const getLogos = () => {
   const logoData = [
     {
-      src: '/images/logo/leviton.png',
+      src: LevitonLogo,
       alt: 'Leviton',
       filename: 'leviton.png'
     },
     {
-      src: '/images/logo/square-d.webp',
+      src: SquareDLogo,
       alt: 'Square D',
       filename: 'square-d.webp'
     },
     {
-      src: '/images/logo/franklin.png',
+      src: FranklinLogo,
       alt: 'Franklin',
       filename: 'franklin.png'
     },
     {
-      src: '/images/logo/lutron.png',
+      src: LutronLogo,
       alt: 'Lutron',
       filename: 'lutron.png'
     },
     {
-      src: '/images/logo/siemens.svg',
+      src: SiemensLogo,
       alt: 'Siemens',
       filename: 'siemens.svg'
     },
     {
-      src: '/images/logo/generac.png',
+      src: GeneracLogo,
       alt: 'Generac',
       filename: 'generac.png'
     },
     {
-      src: '/images/logo/span.png',
+      src: SpanLogo,
       alt: 'Span',
       filename: 'span.png'
     },
     {
-      src: '/images/logo/tesla-powerwall.png',
+      src: TeslaLogo,
       alt: 'Tesla Powerwall Certified Installer',
       filename: 'tesla-powerwall.png'
     }

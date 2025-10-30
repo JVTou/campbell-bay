@@ -1,61 +1,102 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { MasonryPhotoAlbum } from "react-photo-album";
+import "react-photo-album/masonry.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { fadeIn, staggerContainer } from "../utils/motion";
+// motion removed from this section to avoid viewport stacking issues
 
-// Photo data for each business line using actual project photos
+// imagetools optimized imports - Conduit (using optimized widths)
+import C4590Src from "../assets/conduit/IMG_4590.jpg?w=1200&format=webp&as=url";
+import C6534Src from "../assets/conduit/IMG_6534.jpg?w=1200&format=webp&as=url";
+import C7219Src from "../assets/conduit/IMG_7219.jpg?w=1200&format=webp&as=url";
+import C0747Src from "../assets/conduit/IMG-0747.jpg?w=1600&format=webp&as=url";
+import C0750Src from "../assets/conduit/IMG-0750.jpg?w=1600&format=webp&as=url";
+
+// imagetools optimized imports - Panels
+import P4586Src from "../assets/panels/IMG_4586.jpg?w=1200&format=webp&as=url";
+import P4587Src from "../assets/panels/IMG_4587.jpg?w=1200&format=webp&as=url";
+import P4588Src from "../assets/panels/IMG_4588.jpg?w=1200&format=webp&as=url";
+import P4591Src from "../assets/panels/IMG_4591.jpg?w=1200&format=webp&as=url";
+import P4592Src from "../assets/panels/IMG_4592.jpg?w=1200&format=webp&as=url";
+import P5858Src from "../assets/panels/IMG_5858.jpg?w=1200&format=webp&as=url";
+import P5986Src from "../assets/panels/IMG_5986.jpg?w=1200&format=webp&as=url";
+import P6503Src from "../assets/panels/IMG_6503.jpg?w=1200&format=webp&as=url";
+import P7365Src from "../assets/panels/IMG_7365.jpg?w=1200&format=webp&as=url";
+import P7428Src from "../assets/panels/IMG_7428.jpg?w=1200&format=webp&as=url";
+import P7520Src from "../assets/panels/IMG_7520.jpg?w=1200&format=webp&as=url";
+import P7792Src from "../assets/panels/IMG_7792.jpg?w=1200&format=webp&as=url";
+import P7793Src from "../assets/panels/IMG_7793.jpg?w=1200&format=webp&as=url";
+import P7794Src from "../assets/panels/IMG_7794.jpg?w=1200&format=webp&as=url";
+import P7795Src from "../assets/panels/IMG_7795.jpg?w=1200&format=webp&as=url";
+import P7797Src from "../assets/panels/IMG_7797.jpg?w=1200&format=webp&as=url";
+import P7798Src from "../assets/panels/IMG_7798.jpg?w=1200&format=webp&as=url";
+import P7799Src from "../assets/panels/IMG_7799.jpg?w=1200&format=webp&as=url";
+import P7800Src from "../assets/panels/IMG_7800.jpg?w=1200&format=webp&as=url";
+import P0754Src from "../assets/panels/IMG-0754.jpg?w=1600&format=webp&as=url";
+
+// imagetools optimized imports - Chargers
+import CH9290Src from "../assets/chargers/IMG-9290.jpg?w=1600&format=webp&as=url";
+import CH18031Src from "../assets/chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg?w=1200&format=webp&as=url";
+import CH89e3Src from "../assets/chargers/89e38164-0cf8-47bd-8192-21654cbe2467.jpg?w=1200&format=webp&as=url";
+
+// imagetools optimized imports - Solar
+import SOLAR1Src from "../assets/solar/Photo-Feb-17-10-40-48-AM.jpg?w=1600&format=webp&as=url";
+
+// Photo data for each business line with optimized images
 const businessPhotos = {
   commercial: [
-    { src: "/media/Conduit/IMG_4590.jpg", width: 1920, height: 2560 },
-    { src: "/media/Conduit/IMG_6534.jpg", width: 1920, height: 2560 },
-    { src: "/media/Conduit/IMG_7219.jpg", width: 1920, height: 2560 },
-    { src: "/media/Conduit/IMG-0747.jpg", width: 1920, height: 2560 },
-    { src: "/media/Conduit/IMG-0750.jpg", width: 1920, height: 2560 },
+    { src: C4590Src, width: 740, height: 1334 },
+    { src: C6534Src, width: 740, height: 1334 },
+    { src: C7219Src, width: 740, height: 1334 },
+    { src: C0747Src, width: 3024, height: 4032 },
+    { src: C0750Src, width: 4032, height: 3024 },
   ],
   electrification: [
-    { src: "/media/Panels/IMG_4586.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4587.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4588.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4591.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4592.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_5858.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_5986.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_6503.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7365.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7428.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7520.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7792.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7793.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7794.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7795.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7797.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7798.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7799.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7800.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG-0754.jpg", width: 1920, height: 2560 },
+    { src: P4586Src, width: 750, height: 1334 },
+    { src: P4587Src, width: 750, height: 1334 },
+    { src: P4588Src, width: 750, height: 1334 },
+    { src: P4591Src, width: 750, height: 1334 },
+    { src: P4592Src, width: 750, height: 1334 },
+    { src: P5858Src, width: 714, height: 960 },
+    { src: P5986Src, width: 750, height: 1334 },
+    { src: P6503Src, width: 750, height: 1334 },
+    { src: P7365Src, width: 750, height: 1334 },
+    { src: P7428Src, width: 750, height: 1334 },
+    { src: P7520Src, width: 750, height: 1334 },
+    { src: P7792Src, width: 750, height: 1334 },
+    { src: P7793Src, width: 750, height: 1334 },
+    { src: P7794Src, width: 750, height: 1334 },
+    { src: P7795Src, width: 750, height: 1334 },
+    { src: P7797Src, width: 750, height: 1334 },
+    { src: P7798Src, width: 750, height: 1334 },
+    { src: P7799Src, width: 750, height: 1334 },
+    { src: P7800Src, width: 750, height: 1334 },
+    { src: P0754Src, width: 3024, height: 4032 },
   ],
   smartPanels: [
-    { src: "/media/Panels/IMG_4586.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4587.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4588.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4591.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_4592.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_5858.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_5986.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_6503.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7365.jpg", width: 1920, height: 2560 },
-    { src: "/media/Panels/IMG_7428.jpg", width: 1920, height: 2560 },
+    { src: P4586Src, width: 750, height: 1334 },
+    { src: P4587Src, width: 750, height: 1334 },
+    { src: P4588Src, width: 750, height: 1334 },
+    { src: P4591Src, width: 750, height: 1334 },
+    { src: P4592Src, width: 750, height: 1334 },
+    { src: P5858Src, width: 750, height: 960 },
+    { src: P5986Src, width: 750, height: 1334 },
+    { src: P6503Src, width: 750, height: 1334 },
+    { src: P7365Src, width: 750, height: 1334 },
+    { src: P7428Src, width: 750, height: 1334 },
   ],
   evCharging: [
-    { src: "/media/Chargers/IMG-9290.jpg", width: 1920, height: 2560 },
-    { src: "/media/Chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg", width: 1152, height: 1536 },
-    { src: "/media/Chargers/89e38164-0cf8-47bd-8192-21654cbe2467.jpg", width: 1920, height: 2560 },
+    { src: CH9290Src, width: 3024, height: 4032 },
+    { src: CH18031Src, width: 1152, height: 1536 },
+    { src: CH89e3Src, width: 1200, height: 1600 },
   ],
   solar: [
-    { src: "/media/Solar/Photo-Feb-17-10-40-48-AM.jpg", width: 1920, height: 2560 },
+    { src: SOLAR1Src, width: 4032, height: 3024 },
   ]
 };
 
@@ -92,184 +133,62 @@ const businessLines = [
   }
 ];
 
-class BusinessCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false,
-      mouseX: 0,
-      mouseY: 0,
-      touching: false,
-      touchStartTime: 0,
-      startX: 0,
-      startY: 0,
-    };
-  }
-
-  handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    this.setState({ mouseX: x, mouseY: y });
-  }
-
-  handleMouseEnter = () => {
-    this.setState({ hover: true });
-  }
-
-  handleMouseLeave = () => {
-    this.setState({ hover: false });
-  }
-
-  handleClick = () => {
-    // Call the parent's onCardClick function with the album type
-    if (this.props.onCardClick) {
-      this.props.onCardClick(this.props.albumType);
-    }
-  }
-
-  handleTouchStart = (e) => {
-    e.preventDefault();
-    const touch = e.touches[0];
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
-    this.setState({
-      touching: true,
-      touchStartTime: Date.now(),
-      startX: touch.clientX,
-      startY: touch.clientY,
-      mouseX: x,
-      mouseY: y,
-      hover: true
-    });
-  }
-
-  handleTouchMove = (e) => {
-    if (!this.state.touching) return;
-
-    const touch = e.touches[0];
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
-    this.setState({ mouseX: x, mouseY: y });
-  }
-
-  handleTouchEnd = (e) => {
-    if (!this.state.touching) return;
-
-    const touch = e.changedTouches[0];
-    const touchDuration = Date.now() - this.state.touchStartTime;
-    const moved = Math.abs(this.state.startX - touch.clientX) > 10 || Math.abs(this.state.startY - touch.clientY) > 10;
-
-    if (touchDuration < 500 && !moved) {
-      this.handleClick();
-    }
-    this.setState({ touching: false, hover: false });
-  }
-
-  render() {
-    const { title, subtitle, icon } = this.props;
-    const { mouseX, mouseY, hover } = this.state;
-    const cardStyle = {
-      '--mouse-x': `${mouseX}px`,
-      '--mouse-y': `${mouseY}px`,
-      transform: hover ? 'translateY(-10px)' : 'none',
-    };
-
-    return (
-      <div
-        className="business-card"
-        style={cardStyle}
-        onMouseMove={this.handleMouseMove}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-        onClick={this.handleClick}
-        onTouchStart={this.handleTouchStart}
-        onTouchMove={this.handleTouchMove}
-        onTouchEnd={this.handleTouchEnd}
-      >
-        <div className="business-card-content">
-          <div className="business-card-info-wrapper">
-            <div className="business-card-info">
-              <div className="business-card-info-title">
-                <h3 className="font-merriweather text-2xl font-bold text-white mb-2">{title}</h3>
-                <h4 className="font-merriweather text-sm text-gray-200 leading-relaxed">{subtitle}</h4>
-              </div>
-            </div>
-          </div>
-          <div className="business-card-image">
-            <img src={icon} alt={title} className="w-full h-full object-cover opacity-20" />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+// Cards UI removed in favor of masonry tiles + lightbox
 
 export default function SecurityPhotoAlbum() {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentPhotos, setCurrentPhotos] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentAlbumKey, setCurrentAlbumKey] = useState(null);
+  const [index, setIndex] = useState(-1);
 
-  const handleCardClick = (albumType) => {
-    const photos = businessPhotos[albumType] || [];
-    setCurrentPhotos(photos);
-    setCurrentIndex(0);
-    setLightboxOpen(true);
-  };
-
-  const handleLightboxClose = () => {
-    setLightboxOpen(false);
-    setCurrentPhotos([]);
-    setCurrentIndex(0);
-  };
+  const currentSlides = currentAlbumKey ? businessPhotos[currentAlbumKey] : [];
 
   return (
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className="mt-10 flex flex-col items-center justify-center md:mt-20"
+    <div
+      className="mt-10 md:mt-24 scroll-mt-24 flex flex-col items-center justify-center px-4 md:px-8 relative z-10"
     >
-      <motion.h1
-        variants={fadeIn("up", "tween", 0.2, 1)}
+      <h1
         id="projects"
         className="font-merriweather text-center text-2xl font-semibold md:text-5xl py-5 text-white"
       >
         Our Projects
-      </motion.h1>
-      <motion.p
-        variants={fadeIn("up", "tween", 0.3, 1)}
-        className="text-center text-white text-sm mb-8"
-      >
-        Click on any service below to view project photos
-      </motion.p>
-      <motion.div 
-        variants={fadeIn("up", "tween", 0.4, 1)}
-        className="business-cards-container"
-      >
-        {businessLines.map((business, index) => (
-          <BusinessCard
-            key={index}
-            title={business.title}
-            subtitle={business.subtitle}
-            icon={business.icon}
-            albumType={business.albumType}
-            onCardClick={handleCardClick}
-          />
+      </h1>
+      <div className="w-full max-w-6xl">
+        {businessLines.map((business, i) => (
+          <section
+            key={business.title}
+            className="mb-12"
+          >
+            <h2 className="font-merriweather text-xl md:text-3xl font-bold text-white mb-2">
+              {business.title}
+            </h2>
+            <p className="text-sm md:text-base text-white/80 mb-4">
+              {business.subtitle}
+            </p>
+
+            <MasonryPhotoAlbum
+              photos={businessPhotos[business.albumType] || []}
+              columns={(containerWidth) => {
+                if (containerWidth < 640) return 2;
+                if (containerWidth < 1024) return 3;
+                return 4;
+              }}
+              spacing={8}
+              sizes={{ size: "(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1024px" }}
+              onClick={({ index }) => {
+                setCurrentAlbumKey(business.albumType);
+                setIndex(index);
+              }}
+            />
+          </section>
         ))}
-      </motion.div>
-      
+      </div>
+
       <Lightbox
-        open={lightboxOpen}
-        close={handleLightboxClose}
-        slides={currentPhotos}
-        index={currentIndex}
-        on={{ view: ({ index }) => setCurrentIndex(index) }}
-        plugins={[Thumbnails]}
+        slides={currentSlides}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
       />
-    </motion.div>
+    </div>
   );
 }
