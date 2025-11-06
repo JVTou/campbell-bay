@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
+import TabIcon from "../assets/logo/Tab-Icon.png?w=80&format=webp&as=url";
 
 const Footer = () => {
   const yearNow = new Date().getFullYear();
@@ -48,7 +49,7 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold font-merriweather text-base-content">Campbell Bay Electric</h3>
               <div className="flex items-center space-x-2">
-                <img src="/media/logo/Tab-Icon.png" alt="Campbell Bay Electric Logo" className="w-16" />
+                <img src={TabIcon} alt="Campbell Bay Electric Logo" className="w-16" />
               </div>
 
               <p className="text-sm text-base-content/70 font-merriweather">
