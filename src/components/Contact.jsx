@@ -182,6 +182,7 @@ const Contact = () => {
                   </label>
                   <input
                     id="name"
+                    name="Full Name"
                     autoComplete="name"
                     type="text"
                     placeholder="Your Name"
@@ -195,6 +196,7 @@ const Contact = () => {
                   </label>
                   <input
                     id="email"
+                    name="Email Address"
                     autoComplete="email"
                     type="email"
                     placeholder="abcd@example.com"
@@ -208,6 +210,7 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="Message"
                     autoComplete="message"
                     className="textarea textarea-bordered w-full font-merriweather"
                     placeholder="Message"
@@ -217,6 +220,7 @@ const Contact = () => {
                 <button
                   className="btn btn-neutral mt-6 w-full transform px-6 py-3 text-sm font-medium capitalize duration-300 font-merriweather"
                   type="submit"
+                  name="Submit"
                 >
                   get in touch
                 </button>
