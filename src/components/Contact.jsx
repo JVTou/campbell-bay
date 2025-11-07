@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import ClipboardJS from "clipboard";
@@ -21,7 +21,44 @@ const emailTooltip = () => {
   }
 };
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        setSubmitStatus("error");
+        console.error("Form submission error:", error);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
+
   return (
     <motion.section
       variants={staggerContainer}
@@ -175,17 +212,40 @@ const Contact = () => {
             <div className="card-body mx-auto w-full overflow-hidden rounded-lg px-8 py-10 shadow-xl outline outline-base-content/5 lg:max-w-xl">
               <h1 className="card-title font-merriweather">Ask us anything</h1>
 
-              <form className="mt-6" name="contact" data-netlify="true">
+              <form className="mt-6" name="contact" method="post" onSubmit={handleSubmit}>
+                <input type="hidden" name="form-name" value="contact" />
+                {/* Honeypot field for spam protection */}
+                <p style={{ display: "none" }}>
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
+
+                {submitStatus === "success" && (
+                  <div className="mb-4 rounded-lg bg-green-100 p-4 text-green-800">
+                    Thank you! Your message has been sent successfully.
+                  </div>
+                )}
+
+                {submitStatus === "error" && (
+                  <div className="mb-4 rounded-lg bg-red-100 p-4 text-red-800">
+                    Sorry, there was an error sending your message. Please try again.
+                  </div>
+                )}
+
                 <div className="flex-1">
                   <label htmlFor="name" className="mb-2 block text-sm font-merriweather">
                     Full Name
                   </label>
                   <input
                     id="name"
-                    name="Full Name"
+                    name="name"
                     autoComplete="name"
                     type="text"
                     placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     className="input input-bordered w-full font-merriweather"
                   />
                 </div>
@@ -196,10 +256,13 @@ const Contact = () => {
                   </label>
                   <input
                     id="email"
-                    name="Email Address"
+                    name="email"
                     autoComplete="email"
                     type="email"
                     placeholder="abcd@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="input input-bordered w-full font-merriweather"
                   />
                 </div>
@@ -210,19 +273,22 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
-                    name="Message"
+                    name="message"
                     autoComplete="message"
                     className="textarea textarea-bordered w-full font-merriweather"
                     placeholder="Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                   ></textarea>
                 </div>
 
                 <button
-                  className="btn btn-neutral mt-6 w-full transform px-6 py-3 text-sm font-medium capitalize duration-300 font-merriweather"
+                  className="btn btn-neutral mt-6 w-full transform px-6 py-3 text-sm font-medium capitalize duration-300 font-merriweather disabled:opacity-50"
                   type="submit"
-                  name="Submit"
+                  disabled={isSubmitting}
                 >
-                  get in touch
+                  {isSubmitting ? "Sending..." : "get in touch"}
                 </button>
               </form>
             </div>
