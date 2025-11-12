@@ -10,21 +10,21 @@ import Pic1577Avif from "../assets/featured/4O1A1577.jpg?w=480;768;1200&format=a
 import Pic1577Webp from "../assets/featured/4O1A1577.jpg?w=480;768;1200&format=webp&as=srcset";
 import Pic1577Jpg from "../assets/featured/4O1A1577.jpg?w=768&format=jpg&as=url";
 
-import Pic1642Avif from "../assets/featured/4O1A1642.jpg?w=480;768;1200&format=avif&as=srcset";
-import Pic1642Webp from "../assets/featured/4O1A1642.jpg?w=480;768;1200&format=webp&as=srcset";
-import Pic1642Jpg from "../assets/featured/4O1A1642.jpg?w=768&format=jpg&as=url";
+import Pic1642Avif from "../assets/panels/PHOTO-2025-11-11-14-15-31.jpg?w=480;768;1200&format=avif&as=srcset";
+import Pic1642Webp from "../assets/panels/PHOTO-2025-11-11-14-15-31.jpg?w=480;768;1200&format=webp&as=srcset";
+import Pic1642Jpg from "../assets/panels/PHOTO-2025-11-11-14-15-31.jpg?w=768&format=jpg&as=url";
 
-import Pic1682Avif from "../assets/featured/4O1A1682.jpg?w=480;768;1200&format=avif&as=srcset";
-import Pic1682Webp from "../assets/featured/4O1A1682.jpg?w=480;768;1200&format=webp&as=srcset";
-import Pic1682Jpg from "../assets/featured/4O1A1682.jpg?w=768&format=jpg&as=url";
+import Pic1682Avif from "../assets/chargers/IMG-9290.jpg?w=480;768;1200&format=avif&as=srcset";
+import Pic1682Webp from "../assets/chargers/IMG-9290.jpg?w=480;768;1200&format=webp&as=srcset";
+import Pic1682Jpg from "../assets/chargers/IMG-9290.jpg?w=768&format=jpg&as=url";
 
-import Pic1588Avif from "../assets/featured/4O1A1588.jpg?w=480;768;1200&format=avif&as=srcset";
-import Pic1588Webp from "../assets/featured/4O1A1588.jpg?w=480;768;1200&format=webp&as=srcset";
-import Pic1588Jpg from "../assets/featured/4O1A1588.jpg?w=768&format=jpg&as=url";
+import Pic1588Avif from "../assets/chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg?w=480;768;1200&format=avif&as=srcset";
+import Pic1588Webp from "../assets/chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg?w=480;768;1200&format=webp&as=srcset";
+import Pic1588Jpg from "../assets/chargers/18031199-2b42-42d7-bdaf-8abba775fedc-1152x1536.jpg?w=768&format=jpg&as=url";
 
-import Pic1581Avif from "../assets/featured/4O1A1581.jpg?w=480;768;1200&format=avif&as=srcset";
-import Pic1581Webp from "../assets/featured/4O1A1581.jpg?w=480;768;1200&format=webp&as=srcset";
-import Pic1581Jpg from "../assets/featured/4O1A1581.jpg?w=768&format=jpg&as=url";
+import Pic1581Avif from "../assets/solar/Photo-Feb-17-10-40-48-AM.jpg?w=480;768;1200&format=avif&as=srcset";
+import Pic1581Webp from "../assets/solar/Photo-Feb-17-10-40-48-AM.jpg?w=480;768;1200&format=webp&as=srcset";
+import Pic1581Jpg from "../assets/solar/Photo-Feb-17-10-40-48-AM.jpg?w=768&format=jpg&as=url";
 
 const services = [
   {

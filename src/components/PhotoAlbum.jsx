@@ -38,6 +38,7 @@ import P7798Src from "../assets/panels/IMG_7798.jpg?w=1200&format=webp&as=url";
 import P7799Src from "../assets/panels/IMG_7799.jpg?w=1200&format=webp&as=url";
 import P7800Src from "../assets/panels/IMG_7800.jpg?w=1200&format=webp&as=url";
 import P0754Src from "../assets/panels/IMG-0754.jpg?w=1600&format=webp&as=url";
+import P2025Src from "../assets/panels/PHOTO-2025-11-11-14-15-31.jpg?w=1600&format=webp&as=url";
 
 // imagetools optimized imports - Chargers
 import CH9290Src from "../assets/chargers/IMG-9290.jpg?w=1600&format=webp&as=url";
@@ -79,16 +80,7 @@ const businessPhotos = {
     { src: P0754Src, width: 3024, height: 4032 },
   ],
   smartPanels: [
-    { src: P4586Src, width: 750, height: 1334 },
-    { src: P4587Src, width: 750, height: 1334 },
-    { src: P4588Src, width: 750, height: 1334 },
-    { src: P4591Src, width: 750, height: 1334 },
-    { src: P4592Src, width: 750, height: 1334 },
-    { src: P5858Src, width: 750, height: 960 },
-    { src: P5986Src, width: 750, height: 1334 },
-    { src: P6503Src, width: 750, height: 1334 },
-    { src: P7365Src, width: 750, height: 1334 },
-    { src: P7428Src, width: 750, height: 1334 },
+    { src: P2025Src, width: 3024, height: 4032 },
   ],
   evCharging: [
     { src: CH9290Src, width: 3024, height: 4032 },
