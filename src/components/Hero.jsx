@@ -24,12 +24,12 @@ const Hero = () => {
         <div className="text-center lg:text-start flex flex-col justify-center items-center lg:items-start lg:w-1/2">
           <div className="font-merriweather text-3xl font-black md:text-7xl text-white md:text-base-content">
             Campbell Bay
-            <div className="h-[7.5rem] md:h-[15rem] md:w-[720px] py-1 md:py-3">
+            <div className="h-[3rem] md:h-[6rem] md:w-[720px] py-1 md:py-3">
                <Typewriter
                  onInit={(typewriter) => {
                    typewriter
                      .pauseFor(1000)
-                     .typeString(`<span class="text-sky-400">Electrical</span><br><span class="text-gray-400">General</span><br><span class="text-gray-400">Contracting</span>`)
+                     .typeString(`<span class="text-sky-400">Electrical</span>`)
                      .start();
                  }}
                 options={{
