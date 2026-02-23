@@ -4,6 +4,7 @@ import { fadeIn, staggerContainer } from "../utils/motion";
 import ClipboardJS from 'clipboard';
 import tippy from 'tippy.js';
 import MapData from './MapData';
+import NatureConservancyLogo from '../assets/nature-conservancy-logo.png';
 
 const AboutMapSection = () => {
   const mapRef = useRef(null);
@@ -272,9 +273,9 @@ const AboutMapSection = () => {
                 </p>
                 <div className="mt-4 flex justify-center">
                   <img
-                    src="https://serc.carleton.edu/download/images/271377/nature_conservancy.webp"
+                    src={NatureConservancyLogo}
                     alt="The Nature Conservancy logo"
-                    className="h-10 md:h-32 w-auto"
+                    className="h-40 w-auto"
                     loading="lazy"
                   />
                 </div>

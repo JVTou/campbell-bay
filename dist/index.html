@@ -15,9 +15,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-Dtk0T0wj.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-DzyTac6e.png" />
     <link rel="manifest" href="/assets/site-BwHFeIBa.webmanifest" />
-    <!-- Preload critical images -->
-    <link rel="preload" as="image" href="/images/featured/linesofbusiness.png" fetchpriority="high" />
-    <link rel="dns-prefetch" href="/images/" />
+    <!-- Removed preload to avoid eager image fetching -->
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://campbellbayelectric.com" />
     <meta property="og:type" content="website" />
@@ -46,10 +44,17 @@
     />
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-    <script type="module" crossorigin src="/assets/index-BJZDPg5d.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Bjx9rHy5.css">
+    <script type="module" crossorigin src="/assets/index-ov11_iGY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B2VDQ65x.css">
   </head>
   <body>
+    <!-- A little help for the Netlify post-processing bots -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
   </body>
 </html>
