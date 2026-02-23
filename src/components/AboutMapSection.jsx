@@ -267,6 +267,17 @@ const AboutMapSection = () => {
                 <p className="text-sm md:text-base leading-relaxed text-base-content/80">
                   As certified Span Smart Panel installers, we design integrated electrification—solar, EV charging, energy storage, and microgrids—tailored to your property. We stay current on codes and best practices to protect you from costly mistakes, offering clear options, upfront pricing, and licensed technicians you can trust.
                 </p>
+                <p className="text-sm md:text-base leading-relaxed text-base-content/80">
+                  We also give back by donating to The Nature Conservancy, helping protect the lands and waters that make our communities possible.
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <img
+                    src="https://serc.carleton.edu/download/images/271377/nature_conservancy.webp"
+                    alt="The Nature Conservancy logo"
+                    className="h-10 md:h-32 w-auto"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
