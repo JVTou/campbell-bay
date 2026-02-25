@@ -247,7 +247,20 @@ const AboutMapSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+        {/* Nature Conservancy giving section */}
+        <div className="mt-10 flex flex-col items-center text-center space-y-4">
+          <img
+            src={NatureConservancyLogo}
+            alt="The Nature Conservancy logo"
+            className="h-32 md:h-40 w-auto bg-white rounded-lg p-2"
+            loading="lazy"
+          />
+          <p className="max-w-2xl text-sm md:text-base leading-relaxed text-base-content/80">
+            We give back by donating to The Nature Conservancy, helping protect the lands and waters that make our communities possible.
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
           {/* About Section */}
           <motion.div
             variants={fadeIn("up", "tween", 0.2, 1)}
@@ -268,17 +281,6 @@ const AboutMapSection = () => {
                 <p className="text-sm md:text-base leading-relaxed text-base-content/80">
                   As certified Span Smart Panel installers, we design integrated electrification—solar, EV charging, energy storage, and microgrids—tailored to your property. We stay current on codes and best practices to protect you from costly mistakes, offering clear options, upfront pricing, and licensed technicians you can trust.
                 </p>
-                <p className="text-sm md:text-base leading-relaxed text-base-content/80">
-                  We also give back by donating to The Nature Conservancy, helping protect the lands and waters that make our communities possible.
-                </p>
-                <div className="mt-4 flex justify-center">
-                  <img
-                    src={NatureConservancyLogo}
-                    alt="The Nature Conservancy logo"
-                    className="h-40 w-auto"
-                    loading="lazy"
-                  />
-                </div>
               </div>
             </div>
           </motion.div>
