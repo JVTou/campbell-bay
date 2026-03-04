@@ -16,8 +16,17 @@ const testimonials = [
   {
     name: "Orvick Management Group, Inc.",
     role: "Property Management Company",
-    description: "Campbell Bay Electric has been our trusted electrical contractor for over five years. Their team consistently delivers exceptional work on our commercial properties, from routine maintenance to complex electrical upgrades. Their attention to detail, reliability, and professional service make them our go-to choice for all electrical needs.",
+    description:
+      "Campbell Bay Electric has been our trusted electrical contractor for over five years. Their team consistently delivers exceptional work on our commercial properties, from routine maintenance to complex electrical upgrades. Their attention to detail, reliability, and professional service make them our go-to choice for all electrical needs.",
     image: "/media/customers/orvick.jpg",
+    rating: 5,
+  },
+  {
+    name: "Scott",
+    role: "Property Owner",
+    description:
+      "Hector, Manny, and Jessie worked nonstop Saturday. I was really impressed! Thanks for coordinating with tenants. [...] Yours truly, Scott.",
+    image: "/apple-touch-icon.png",
     rating: 5,
   },
 ];
