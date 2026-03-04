@@ -26,7 +26,7 @@ const testimonials = [
     role: "Property Owner",
     description:
       "Hector, Manny, and Jessie worked nonstop Saturday. I was really impressed! Thanks for coordinating with tenants. [...] Yours truly, Scott.",
-    image: "/media/apple-touch-icon.png",
+    image: "/media/customers/apple-touch-icon.png",
     rating: 5,
   },
 ];
