@@ -1,10 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import TabIcon from "../assets/logo/Tab-Icon.png?w=80&format=webp&as=url";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const Footer = () => {
   const yearNow = new Date().getFullYear();
+  const [reviewForm, setReviewForm] = useState({ client_name: "", email: "", review: "" });
+  const [reviewSubmitting, setReviewSubmitting] = useState(false);
+  const [reviewStatus, setReviewStatus] = useState(null);
+
+  const handleReviewChange = (e) => {
+    setReviewForm({ ...reviewForm, [e.target.name]: e.target.value });
+  };
+
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    setReviewSubmitting(true);
+    setReviewStatus(null);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "client-review", ...reviewForm }),
+    })
+      .then(() => {
+        setReviewStatus("success");
+        setReviewForm({ client_name: "", email: "", review: "" });
+      })
+      .catch(() => {
+        setReviewStatus("error");
+      })
+      .finally(() => {
+        setReviewSubmitting(false);
+      });
+  };
 
   const siteMapLinks = [
     { name: "Home", href: "#home" },
@@ -13,6 +48,7 @@ const Footer = () => {
     { name: "About Us", href: "#aboutus" },
     { name: "Contact Us", href: "#contactus" },
     { name: "Projects Album", href: "#projects" },
+    { name: "Leave a review", href: "#client-review" },
   ];
 
   const serviceLinks = [
@@ -108,6 +144,98 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Community giving & client reviews */}
+        <div className="border-t border-base-content/10">
+          <div className="container mx-auto max-w-2xl px-6 py-10">
+            <p className="text-center text-sm leading-relaxed text-base-content/80 font-merriweather">
+              Campbell Bay Electric also supports Christian and Catholic churches through charitable giving, alongside our other community commitments.
+            </p>
+
+            <div id="client-review" className="mt-10 rounded-xl border border-base-content/10 bg-base-100/50 p-6 shadow-sm md:p-8">
+              <h3 className="text-center font-merriweather text-lg font-semibold text-base-content md:text-xl">
+                Share your experience
+              </h3>
+              <p className="mt-2 text-center text-sm text-base-content/70 font-merriweather">
+                Leave a short review. We may feature it on this site—we&apos;ll reach out if we need anything else.
+              </p>
+
+              <form name="client-review" method="post" className="mt-6 space-y-4" onSubmit={handleReviewSubmit}>
+                <input type="hidden" name="form-name" value="client-review" />
+                <p className="hidden" aria-hidden="true">
+                  <label>
+                    Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                  </label>
+                </p>
+
+                {reviewStatus === "success" && (
+                  <div className="rounded-lg bg-green-100 p-4 text-sm text-green-800 font-merriweather">
+                    Thank you! Your review was sent. We appreciate you taking the time.
+                  </div>
+                )}
+                {reviewStatus === "error" && (
+                  <div className="rounded-lg bg-red-100 p-4 text-sm text-red-800 font-merriweather">
+                    Something went wrong. Please try again or email us at info@campbellbayelectric.com.
+                  </div>
+                )}
+
+                <div>
+                  <label htmlFor="client-review-name" className="mb-1 block text-sm font-merriweather text-base-content">
+                    Your name
+                  </label>
+                  <input
+                    id="client-review-name"
+                    type="text"
+                    name="client_name"
+                    value={reviewForm.client_name}
+                    onChange={handleReviewChange}
+                    required
+                    autoComplete="name"
+                    className="input input-bordered w-full font-merriweather"
+                    placeholder="Name as you’d like it shown"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="client-review-email" className="mb-1 block text-sm font-merriweather text-base-content">
+                    Email <span className="text-base-content/60">(optional)</span>
+                  </label>
+                  <input
+                    id="client-review-email"
+                    type="email"
+                    name="email"
+                    value={reviewForm.email}
+                    onChange={handleReviewChange}
+                    autoComplete="email"
+                    className="input input-bordered w-full font-merriweather"
+                    placeholder="So we can follow up if needed"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="client-review-text" className="mb-1 block text-sm font-merriweather text-base-content">
+                    Your review
+                  </label>
+                  <textarea
+                    id="client-review-text"
+                    name="review"
+                    value={reviewForm.review}
+                    onChange={handleReviewChange}
+                    required
+                    rows={4}
+                    className="textarea textarea-bordered w-full font-merriweather"
+                    placeholder="Tell us about your project or experience…"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-neutral w-full rounded-full font-merriweather"
+                  disabled={reviewSubmitting}
+                >
+                  {reviewSubmitting ? "Sending…" : "Submit review"}
+                </button>
+              </form>
             </div>
           </div>
         </div>
