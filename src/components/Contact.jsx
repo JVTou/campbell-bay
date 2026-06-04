@@ -110,21 +110,21 @@ const Contact = () => {
                     />
                   </svg>
                   <span className="mx-2 font-merriweather text-base-content">
-                    <strong className="font-merriweather">Address:</strong> 205 E Alma Ave, San Jose, CA 95112
+                    <strong className="font-merriweather">Address:</strong> 1723 Rogers Ave, San Jose, CA 95112, Suite B
                   </span>
                 </p>
                 
                 {/* Google Maps Embed */}
                 <div className="mt-4">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.1234567890!2d-121.8894!3d37.3382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb8b8b8b8b8b%3A0x1234567890abcdef!2s205%20E%20Alma%20Ave%2C%20San%20Jose%2C%20CA%2095112!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.8354972304896!2d-121.8821946!3d37.3618056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcc424a1bfa49%3A0xe96841285223f03a!2s1723%20Rogers%20Ave%20Suite%20B%2C%20San%20Jose%2C%20CA%2095112!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                     width="100%"
                     height="200"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Campbell Bay Electric Location - 205 E Alma Ave, San Jose, CA"
+                    title="Campbell Bay Electric Location - 1723 Rogers Ave, San Jose, CA"
                     className="rounded-lg shadow-md"
                   ></iframe>
                 </div>
