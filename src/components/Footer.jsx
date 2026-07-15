@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import TabIcon from "../assets/logo/Tab-Icon.png?w=80&format=webp&as=url";
+import { navigate } from "../utils/navigation";
 
 const encode = (data) => {
   return Object.keys(data)
@@ -42,21 +43,21 @@ const Footer = () => {
   };
 
   const siteMapLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonial" },
-    { name: "About Us", href: "#aboutus" },
-    { name: "Contact Us", href: "#contactus" },
-    { name: "Projects Album", href: "#projects" },
+    { name: "Home", href: "/#home" },
+    { name: "Commercial Services", href: "/commercial" },
+    { name: "Residential Services", href: "/residential" },
+    { name: "Testimonials", href: "/#testimonial" },
+    { name: "About Us", href: "/#aboutus" },
+    { name: "Contact Us", href: "/#contactus" },
+    { name: "Projects Album", href: "/#projects" },
     { name: "Leave a review", href: "#client-review" },
   ];
 
   const serviceLinks = [
-    { name: "Residential Services", href: "#services" },
-    { name: "Commercial Services", href: "#services" },
-    { name: "Integrated Electrification", href: "#services" },
-    { name: "Smart Electrical Panels", href: "#services" },
-    { name: "EV Charging Solutions", href: "#services" },
+    { name: "Residential Services", href: "/residential" },
+    { name: "Commercial Services", href: "/commercial" },
+    { name: "Smart Electrical Panels", href: "/residential" },
+    { name: "EV Charging Solutions", href: "/residential" },
   ];
 
   const companyLinks = [
@@ -64,6 +65,32 @@ const Footer = () => {
     { name: "Email Us", href: "mailto:info@campbellbayelectric.com", external: true },
     { name: "Call Us", href: "tel:+14088914470", external: true },
   ];
+
+  const handleLinkClick = (e, href) => {
+    if (href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel")) {
+      return; // Use default link click
+    }
+    e.preventDefault();
+
+    if (href.startsWith("/#") || href.startsWith("#")) {
+      const targetHash = href.startsWith("/#") ? href.substring(1) : href; // e.g. '#aboutus'
+      if (window.location.pathname === "/") {
+        // Scroll smoothly on the home page
+        window.history.pushState({}, "", href.startsWith("/#") ? href : "/" + href);
+        const element = document.querySelector(targetHash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+        window.dispatchEvent(new Event("hashchange"));
+      } else {
+        // Redirect to home page with hash
+        navigate(href.startsWith("/#") ? href : "/" + href);
+      }
+    } else {
+      // Navigate to sub-page
+      navigate(href);
+    }
+  };
 
   return (
     <motion.section
@@ -101,7 +128,8 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-sm text-base-content/70 hover:text-base-content transition-colors font-merriweather"
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className="text-sm text-base-content/70 hover:text-base-content transition-colors font-merriweather cursor-pointer"
                     >
                       {link.name}
                     </a>
@@ -118,7 +146,8 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-sm text-base-content/70 hover:text-base-content transition-colors font-merriweather"
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className="text-sm text-base-content/70 hover:text-base-content transition-colors font-merriweather cursor-pointer"
                     >
                       {link.name}
                     </a>
