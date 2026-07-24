@@ -29,6 +29,14 @@ const testimonials = [
     image: "/media/customers/apple-touch-icon.png",
     rating: 5,
   },
+  {
+    name: "Orvick Management Group",
+    role: "Property Management Company",
+    description:
+      "Wonderful! You all are the best! Thanks for such fast service.",
+    image: "/media/customers/orvick.jpg",
+    rating: 5,
+  },
 ];
 const Testimonial = () => {
   return (
