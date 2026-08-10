@@ -45,6 +45,14 @@ const testimonials = [
     image: "/media/customers/apple-touch-icon.png",
     rating: 5,
   },
+  {
+    name: "Ruben",
+    role: "DRI Construction",
+    description:
+      "I would like to extend my utmost respect to your crew. They conducted themselves like professionals and are very hard working. I look forward to working with you in the future. See you on the next one !! God Bless 🙏",
+    image: "/media/customers/apple-touch-icon.png",
+    rating: 5,
+  },
 ];
 const Testimonial = () => {
   return (
