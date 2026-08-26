@@ -26,7 +26,6 @@ const testimonials = [
     role: "Property Owner",
     description:
       "Hector, Manny, and Jessie worked nonstop Saturday. I was really impressed! Thanks for coordinating with tenants. [...] Yours truly, Scott.",
-    image: "/media/customers/apple-touch-icon.png",
     rating: 5,
   },
   {
@@ -50,7 +49,6 @@ const testimonials = [
     role: "DRI Construction",
     description:
       "I would like to extend my utmost respect to your crew. They conducted themselves like professionals and are very hard working. I look forward to working with you in the future. See you on the next one !! God Bless 🙏",
-    image: "/media/customers/apple-touch-icon.png",
     rating: 5,
   },
 ];
@@ -106,13 +104,15 @@ const Testimonial = () => {
                     <p>"{item.description}"</p>
                   </blockquote>
                   <div className="mt-6 md:mt-10 flex flex-col items-center">
-                    <div className="w-1/2 sm:w-1/3 flex justify-center">
-                      <img
-                        className="h-12 sm:h-16 md:h-20 w-12 sm:w-16 md:w-20 object-cover rounded-full"
-                        src={item.image}
-                        alt={`${item.name} photo`}
-                      />
-                    </div>
+                    {item.image && (
+                      <div className="w-1/2 sm:w-1/3 flex justify-center">
+                        <img
+                          className="h-12 sm:h-16 md:h-20 w-12 sm:w-16 md:w-20 object-cover rounded-full"
+                          src={item.image}
+                          alt={`${item.name} photo`}
+                        />
+                      </div>
+                    )}
                     <div className="mt-3 md:mt-4 flex flex-col items-center text-center">
                       <div className="font-merriweather text-lg sm:text-xl font-semibold text-base-content">
                         {item.name}
