@@ -42,7 +42,7 @@ const testimonials = [
     role: "Property Owner",
     description:
       "Thanks for sending Jesse over. He was quick and tidy.",
-    image: "/media/customers/apple-touch-icon.png",
+    image: "/media/customers/bicyclebluebook.png",
     rating: 5,
   },
   {

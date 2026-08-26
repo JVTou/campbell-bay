@@ -16,6 +16,9 @@ import C6534Src from "../assets/conduit/IMG_6534.jpg?w=1200&format=webp&as=url";
 import C7219Src from "../assets/conduit/IMG_7219.jpg?w=1200&format=webp&as=url";
 import C0747Src from "../assets/conduit/IMG-0747.jpg?w=1600&format=webp&as=url";
 import C0750Src from "../assets/conduit/IMG-0750.jpg?w=1600&format=webp&as=url";
+import CDiscussionSrc from "../assets/conduit/discussion.jpg?w=1200&format=webp&as=url";
+import CBlueprintsSrc from "../assets/conduit/blueprints.jpg?w=1200&format=webp&as=url";
+import CElectricianSrc from "../assets/conduit/electrician.jpg?w=1200&format=webp&as=url";
 
 // imagetools optimized imports - Panels
 import P4586Src from "../assets/panels/IMG_4586.jpg?w=1200&format=webp&as=url";
@@ -56,6 +59,9 @@ const businessPhotos = {
     { src: C7219Src, width: 740, height: 1334 },
     { src: C0747Src, width: 3024, height: 4032 },
     { src: C0750Src, width: 4032, height: 3024 },
+    { src: CDiscussionSrc, width: 682, height: 1024 },
+    { src: CBlueprintsSrc, width: 682, height: 1024 },
+    { src: CElectricianSrc, width: 682, height: 1024 },
   ],
   electrification: [
     { src: P4586Src, width: 750, height: 1334 },
